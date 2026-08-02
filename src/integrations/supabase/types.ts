@@ -14,16 +14,624 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      call_requests: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      contact_messages: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      family_event_registrations: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      general_interests: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      information_session_registrations: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      mentor_interests: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      organization_partnerships: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      public_events: {
+        Row: {
+          attendance: string
+          audience: string
+          capacity: string | null
+          category: string
+          cost: string
+          created_at: string
+          description: string
+          division: string
+          event_date: string
+          event_time: string
+          featured_image: string | null
+          format: string
+          id: string
+          location: string
+          registration_deadline: string | null
+          registration_link: string | null
+          sort_order: number
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          attendance?: string
+          audience?: string
+          capacity?: string | null
+          category: string
+          cost?: string
+          created_at?: string
+          description?: string
+          division: string
+          event_date?: string
+          event_time?: string
+          featured_image?: string | null
+          format?: string
+          id?: string
+          location?: string
+          registration_deadline?: string | null
+          registration_link?: string | null
+          sort_order?: number
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          attendance?: string
+          audience?: string
+          capacity?: string | null
+          category?: string
+          cost?: string
+          created_at?: string
+          description?: string
+          division?: string
+          event_date?: string
+          event_time?: string
+          featured_image?: string | null
+          format?: string
+          id?: string
+          location?: string
+          registration_deadline?: string | null
+          registration_link?: string | null
+          sort_order?: number
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      workshop_registrations: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      youth_program_interests: {
+        Row: {
+          consent: boolean
+          created_at: string
+          details: Json
+          division: string | null
+          email: string
+          follow_up_date: string | null
+          follow_up_owner: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          program_or_service: string | null
+          referral_source: string | null
+          source_form: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          details?: Json
+          division?: string | null
+          email?: string
+          follow_up_date?: string | null
+          follow_up_owner?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          program_or_service?: string | null
+          referral_source?: string | null
+          source_form?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +758,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin"],
+    },
   },
 } as const
