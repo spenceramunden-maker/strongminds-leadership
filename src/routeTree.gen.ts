@@ -10,8 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlumniFellowshipRouteImport } from './routes/alumni-fellowship'
 import { Route as FellowshipRouteImport } from './routes/fellowship'
+import { Route as LearningLabsRouteImport } from './routes/learning-labs'
 import { Route as SummerIntensiveRouteImport } from './routes/summer-intensive'
+import { Route as VirtualCampusRouteImport } from './routes/virtual-campus'
+import { Route as VirtualCampusLoginRouteImport } from './routes/virtual-campus-login'
 import { Route as YouthAcademyRouteImport } from './routes/youth-academy'
 
 const IndexRoute = IndexRouteImport.update({
@@ -19,14 +23,34 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlumniFellowshipRoute = AlumniFellowshipRouteImport.update({
+  id: '/alumni-fellowship',
+  path: '/alumni-fellowship',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FellowshipRoute = FellowshipRouteImport.update({
   id: '/fellowship',
   path: '/fellowship',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LearningLabsRoute = LearningLabsRouteImport.update({
+  id: '/learning-labs',
+  path: '/learning-labs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SummerIntensiveRoute = SummerIntensiveRouteImport.update({
   id: '/summer-intensive',
   path: '/summer-intensive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VirtualCampusRoute = VirtualCampusRouteImport.update({
+  id: '/virtual-campus',
+  path: '/virtual-campus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VirtualCampusLoginRoute = VirtualCampusLoginRouteImport.update({
+  id: '/virtual-campus-login',
+  path: '/virtual-campus-login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const YouthAcademyRoute = YouthAcademyRouteImport.update({
@@ -37,35 +61,76 @@ const YouthAcademyRoute = YouthAcademyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alumni-fellowship': typeof AlumniFellowshipRoute
   '/fellowship': typeof FellowshipRoute
+  '/learning-labs': typeof LearningLabsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
+  '/virtual-campus': typeof VirtualCampusRoute
+  '/virtual-campus-login': typeof VirtualCampusLoginRoute
   '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alumni-fellowship': typeof AlumniFellowshipRoute
   '/fellowship': typeof FellowshipRoute
+  '/learning-labs': typeof LearningLabsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
+  '/virtual-campus': typeof VirtualCampusRoute
+  '/virtual-campus-login': typeof VirtualCampusLoginRoute
   '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alumni-fellowship': typeof AlumniFellowshipRoute
   '/fellowship': typeof FellowshipRoute
+  '/learning-labs': typeof LearningLabsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
+  '/virtual-campus': typeof VirtualCampusRoute
+  '/virtual-campus-login': typeof VirtualCampusLoginRoute
   '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/fellowship' | '/summer-intensive' | '/youth-academy'
+  fullPaths:
+    | '/'
+    | '/alumni-fellowship'
+    | '/fellowship'
+    | '/learning-labs'
+    | '/summer-intensive'
+    | '/virtual-campus'
+    | '/virtual-campus-login'
+    | '/youth-academy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/fellowship' | '/summer-intensive' | '/youth-academy'
-  id: '__root__' | '/' | '/fellowship' | '/summer-intensive' | '/youth-academy'
+  to:
+    | '/'
+    | '/alumni-fellowship'
+    | '/fellowship'
+    | '/learning-labs'
+    | '/summer-intensive'
+    | '/virtual-campus'
+    | '/virtual-campus-login'
+    | '/youth-academy'
+  id:
+    | '__root__'
+    | '/'
+    | '/alumni-fellowship'
+    | '/fellowship'
+    | '/learning-labs'
+    | '/summer-intensive'
+    | '/virtual-campus'
+    | '/virtual-campus-login'
+    | '/youth-academy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlumniFellowshipRoute: typeof AlumniFellowshipRoute
   FellowshipRoute: typeof FellowshipRoute
+  LearningLabsRoute: typeof LearningLabsRoute
   SummerIntensiveRoute: typeof SummerIntensiveRoute
+  VirtualCampusRoute: typeof VirtualCampusRoute
+  VirtualCampusLoginRoute: typeof VirtualCampusLoginRoute
   YouthAcademyRoute: typeof YouthAcademyRoute
 }
 
@@ -78,6 +143,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alumni-fellowship': {
+      id: '/alumni-fellowship'
+      path: '/alumni-fellowship'
+      fullPath: '/alumni-fellowship'
+      preLoaderRoute: typeof AlumniFellowshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fellowship': {
       id: '/fellowship'
       path: '/fellowship'
@@ -85,11 +157,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FellowshipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/learning-labs': {
+      id: '/learning-labs'
+      path: '/learning-labs'
+      fullPath: '/learning-labs'
+      preLoaderRoute: typeof LearningLabsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/summer-intensive': {
       id: '/summer-intensive'
       path: '/summer-intensive'
       fullPath: '/summer-intensive'
       preLoaderRoute: typeof SummerIntensiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/virtual-campus': {
+      id: '/virtual-campus'
+      path: '/virtual-campus'
+      fullPath: '/virtual-campus'
+      preLoaderRoute: typeof VirtualCampusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/virtual-campus-login': {
+      id: '/virtual-campus-login'
+      path: '/virtual-campus-login'
+      fullPath: '/virtual-campus-login'
+      preLoaderRoute: typeof VirtualCampusLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/youth-academy': {
@@ -104,8 +197,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlumniFellowshipRoute: AlumniFellowshipRoute,
   FellowshipRoute: FellowshipRoute,
+  LearningLabsRoute: LearningLabsRoute,
   SummerIntensiveRoute: SummerIntensiveRoute,
+  VirtualCampusRoute: VirtualCampusRoute,
+  VirtualCampusLoginRoute: VirtualCampusLoginRoute,
   YouthAcademyRoute: YouthAcademyRoute,
 }
 export const routeTree = rootRouteImport
