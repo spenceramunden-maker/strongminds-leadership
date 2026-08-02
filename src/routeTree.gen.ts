@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FellowshipRouteImport } from './routes/fellowship'
+import { Route as SummerIntensiveRouteImport } from './routes/summer-intensive'
+import { Route as YouthAcademyRouteImport } from './routes/youth-academy'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FellowshipRoute = FellowshipRouteImport.update({
+  id: '/fellowship',
+  path: '/fellowship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SummerIntensiveRoute = SummerIntensiveRouteImport.update({
+  id: '/summer-intensive',
+  path: '/summer-intensive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YouthAcademyRoute = YouthAcademyRouteImport.update({
+  id: '/youth-academy',
+  path: '/youth-academy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/fellowship': typeof FellowshipRoute
+  '/summer-intensive': typeof SummerIntensiveRoute
+  '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/fellowship': typeof FellowshipRoute
+  '/summer-intensive': typeof SummerIntensiveRoute
+  '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/fellowship': typeof FellowshipRoute
+  '/summer-intensive': typeof SummerIntensiveRoute
+  '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/fellowship' | '/summer-intensive' | '/youth-academy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/fellowship' | '/summer-intensive' | '/youth-academy'
+  id: '__root__' | '/' | '/fellowship' | '/summer-intensive' | '/youth-academy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FellowshipRoute: typeof FellowshipRoute
+  SummerIntensiveRoute: typeof SummerIntensiveRoute
+  YouthAcademyRoute: typeof YouthAcademyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fellowship': {
+      id: '/fellowship'
+      path: '/fellowship'
+      fullPath: '/fellowship'
+      preLoaderRoute: typeof FellowshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/summer-intensive': {
+      id: '/summer-intensive'
+      path: '/summer-intensive'
+      fullPath: '/summer-intensive'
+      preLoaderRoute: typeof SummerIntensiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/youth-academy': {
+      id: '/youth-academy'
+      path: '/youth-academy'
+      fullPath: '/youth-academy'
+      preLoaderRoute: typeof YouthAcademyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FellowshipRoute: FellowshipRoute,
+  SummerIntensiveRoute: SummerIntensiveRoute,
+  YouthAcademyRoute: YouthAcademyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
