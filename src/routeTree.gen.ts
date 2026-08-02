@@ -11,10 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlumniFellowshipRouteImport } from './routes/alumni-fellowship'
+import { Route as EnrollRouteImport } from './routes/enroll'
 import { Route as FamiliesRouteImport } from './routes/families'
 import { Route as FamilyRegistrationRouteImport } from './routes/family-registration'
 import { Route as FellowshipRouteImport } from './routes/fellowship'
+import { Route as InformationSessionRouteImport } from './routes/information-session'
+import { Route as InterestRouteImport } from './routes/interest'
 import { Route as LearningLabsRouteImport } from './routes/learning-labs'
+import { Route as MentorInterestRouteImport } from './routes/mentor-interest'
 import { Route as MentorsRouteImport } from './routes/mentors'
 import { Route as ParentNightOffRouteImport } from './routes/parent-night-off'
 import { Route as PartnershipsRouteImport } from './routes/partnerships'
@@ -35,6 +39,11 @@ const AlumniFellowshipRoute = AlumniFellowshipRouteImport.update({
   path: '/alumni-fellowship',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnrollRoute = EnrollRouteImport.update({
+  id: '/enroll',
+  path: '/enroll',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FamiliesRoute = FamiliesRouteImport.update({
   id: '/families',
   path: '/families',
@@ -50,9 +59,24 @@ const FellowshipRoute = FellowshipRouteImport.update({
   path: '/fellowship',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InformationSessionRoute = InformationSessionRouteImport.update({
+  id: '/information-session',
+  path: '/information-session',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterestRoute = InterestRouteImport.update({
+  id: '/interest',
+  path: '/interest',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LearningLabsRoute = LearningLabsRouteImport.update({
   id: '/learning-labs',
   path: '/learning-labs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentorInterestRoute = MentorInterestRouteImport.update({
+  id: '/mentor-interest',
+  path: '/mentor-interest',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MentorsRoute = MentorsRouteImport.update({
@@ -104,10 +128,14 @@ const YouthAcademyRoute = YouthAcademyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/enroll': typeof EnrollRoute
   '/families': typeof FamiliesRoute
   '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
+  '/information-session': typeof InformationSessionRoute
+  '/interest': typeof InterestRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/mentor-interest': typeof MentorInterestRoute
   '/mentors': typeof MentorsRoute
   '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
@@ -121,10 +149,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/enroll': typeof EnrollRoute
   '/families': typeof FamiliesRoute
   '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
+  '/information-session': typeof InformationSessionRoute
+  '/interest': typeof InterestRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/mentor-interest': typeof MentorInterestRoute
   '/mentors': typeof MentorsRoute
   '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
@@ -139,10 +171,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/enroll': typeof EnrollRoute
   '/families': typeof FamiliesRoute
   '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
+  '/information-session': typeof InformationSessionRoute
+  '/interest': typeof InterestRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/mentor-interest': typeof MentorInterestRoute
   '/mentors': typeof MentorsRoute
   '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
@@ -158,10 +194,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/alumni-fellowship'
+    | '/enroll'
     | '/families'
     | '/family-registration'
     | '/fellowship'
+    | '/information-session'
+    | '/interest'
     | '/learning-labs'
+    | '/mentor-interest'
     | '/mentors'
     | '/parent-night-off'
     | '/partnerships'
@@ -175,10 +215,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/alumni-fellowship'
+    | '/enroll'
     | '/families'
     | '/family-registration'
     | '/fellowship'
+    | '/information-session'
+    | '/interest'
     | '/learning-labs'
+    | '/mentor-interest'
     | '/mentors'
     | '/parent-night-off'
     | '/partnerships'
@@ -192,10 +236,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/alumni-fellowship'
+    | '/enroll'
     | '/families'
     | '/family-registration'
     | '/fellowship'
+    | '/information-session'
+    | '/interest'
     | '/learning-labs'
+    | '/mentor-interest'
     | '/mentors'
     | '/parent-night-off'
     | '/partnerships'
@@ -210,10 +258,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlumniFellowshipRoute: typeof AlumniFellowshipRoute
+  EnrollRoute: typeof EnrollRoute
   FamiliesRoute: typeof FamiliesRoute
   FamilyRegistrationRoute: typeof FamilyRegistrationRoute
   FellowshipRoute: typeof FellowshipRoute
+  InformationSessionRoute: typeof InformationSessionRoute
+  InterestRoute: typeof InterestRoute
   LearningLabsRoute: typeof LearningLabsRoute
+  MentorInterestRoute: typeof MentorInterestRoute
   MentorsRoute: typeof MentorsRoute
   ParentNightOffRoute: typeof ParentNightOffRoute
   PartnershipsRoute: typeof PartnershipsRoute
@@ -241,6 +293,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlumniFellowshipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/enroll': {
+      id: '/enroll'
+      path: '/enroll'
+      fullPath: '/enroll'
+      preLoaderRoute: typeof EnrollRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/families': {
       id: '/families'
       path: '/families'
@@ -262,11 +321,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FellowshipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/information-session': {
+      id: '/information-session'
+      path: '/information-session'
+      fullPath: '/information-session'
+      preLoaderRoute: typeof InformationSessionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interest': {
+      id: '/interest'
+      path: '/interest'
+      fullPath: '/interest'
+      preLoaderRoute: typeof InterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learning-labs': {
       id: '/learning-labs'
       path: '/learning-labs'
       fullPath: '/learning-labs'
       preLoaderRoute: typeof LearningLabsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentor-interest': {
+      id: '/mentor-interest'
+      path: '/mentor-interest'
+      fullPath: '/mentor-interest'
+      preLoaderRoute: typeof MentorInterestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mentors': {
@@ -338,10 +418,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlumniFellowshipRoute: AlumniFellowshipRoute,
+  EnrollRoute: EnrollRoute,
   FamiliesRoute: FamiliesRoute,
   FamilyRegistrationRoute: FamilyRegistrationRoute,
   FellowshipRoute: FellowshipRoute,
+  InformationSessionRoute: InformationSessionRoute,
+  InterestRoute: InterestRoute,
   LearningLabsRoute: LearningLabsRoute,
+  MentorInterestRoute: MentorInterestRoute,
   MentorsRoute: MentorsRoute,
   ParentNightOffRoute: ParentNightOffRoute,
   PartnershipsRoute: PartnershipsRoute,
