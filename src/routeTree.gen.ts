@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlumniFellowshipRouteImport } from './routes/alumni-fellowship'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EnrollRouteImport } from './routes/enroll'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as FamiliesRouteImport } from './routes/families'
 import { Route as FamilyRegistrationRouteImport } from './routes/family-registration'
 import { Route as FellowshipRouteImport } from './routes/fellowship'
@@ -22,6 +24,8 @@ import { Route as MentorInterestRouteImport } from './routes/mentor-interest'
 import { Route as MentorsRouteImport } from './routes/mentors'
 import { Route as ParentNightOffRouteImport } from './routes/parent-night-off'
 import { Route as PartnershipsRouteImport } from './routes/partnerships'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ScheduleACallRouteImport } from './routes/schedule-a-call'
 import { Route as SmileRouteImport } from './routes/smile'
 import { Route as SmileWorkshopsRouteImport } from './routes/smile-workshops'
 import { Route as SummerIntensiveRouteImport } from './routes/summer-intensive'
@@ -39,9 +43,19 @@ const AlumniFellowshipRoute = AlumniFellowshipRouteImport.update({
   path: '/alumni-fellowship',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnrollRoute = EnrollRouteImport.update({
   id: '/enroll',
   path: '/enroll',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FamiliesRoute = FamiliesRouteImport.update({
@@ -94,6 +108,16 @@ const PartnershipsRoute = PartnershipsRouteImport.update({
   path: '/partnerships',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleACallRoute = ScheduleACallRouteImport.update({
+  id: '/schedule-a-call',
+  path: '/schedule-a-call',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SmileRoute = SmileRouteImport.update({
   id: '/smile',
   path: '/smile',
@@ -128,7 +152,9 @@ const YouthAcademyRoute = YouthAcademyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
+  '/events': typeof EventsRoute
   '/families': typeof FamiliesRoute
   '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
@@ -139,6 +165,8 @@ export interface FileRoutesByFullPath {
   '/mentors': typeof MentorsRoute
   '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
+  '/register': typeof RegisterRoute
+  '/schedule-a-call': typeof ScheduleACallRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
@@ -149,7 +177,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
+  '/events': typeof EventsRoute
   '/families': typeof FamiliesRoute
   '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
@@ -160,6 +190,8 @@ export interface FileRoutesByTo {
   '/mentors': typeof MentorsRoute
   '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
+  '/register': typeof RegisterRoute
+  '/schedule-a-call': typeof ScheduleACallRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
@@ -171,7 +203,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
+  '/events': typeof EventsRoute
   '/families': typeof FamiliesRoute
   '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
@@ -182,6 +216,8 @@ export interface FileRoutesById {
   '/mentors': typeof MentorsRoute
   '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
+  '/register': typeof RegisterRoute
+  '/schedule-a-call': typeof ScheduleACallRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
@@ -194,7 +230,9 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/alumni-fellowship'
+    | '/contact'
     | '/enroll'
+    | '/events'
     | '/families'
     | '/family-registration'
     | '/fellowship'
@@ -205,6 +243,8 @@ export interface FileRouteTypes {
     | '/mentors'
     | '/parent-night-off'
     | '/partnerships'
+    | '/register'
+    | '/schedule-a-call'
     | '/smile'
     | '/smile-workshops'
     | '/summer-intensive'
@@ -215,7 +255,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/alumni-fellowship'
+    | '/contact'
     | '/enroll'
+    | '/events'
     | '/families'
     | '/family-registration'
     | '/fellowship'
@@ -226,6 +268,8 @@ export interface FileRouteTypes {
     | '/mentors'
     | '/parent-night-off'
     | '/partnerships'
+    | '/register'
+    | '/schedule-a-call'
     | '/smile'
     | '/smile-workshops'
     | '/summer-intensive'
@@ -236,7 +280,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/alumni-fellowship'
+    | '/contact'
     | '/enroll'
+    | '/events'
     | '/families'
     | '/family-registration'
     | '/fellowship'
@@ -247,6 +293,8 @@ export interface FileRouteTypes {
     | '/mentors'
     | '/parent-night-off'
     | '/partnerships'
+    | '/register'
+    | '/schedule-a-call'
     | '/smile'
     | '/smile-workshops'
     | '/summer-intensive'
@@ -258,7 +306,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlumniFellowshipRoute: typeof AlumniFellowshipRoute
+  ContactRoute: typeof ContactRoute
   EnrollRoute: typeof EnrollRoute
+  EventsRoute: typeof EventsRoute
   FamiliesRoute: typeof FamiliesRoute
   FamilyRegistrationRoute: typeof FamilyRegistrationRoute
   FellowshipRoute: typeof FellowshipRoute
@@ -269,6 +319,8 @@ export interface RootRouteChildren {
   MentorsRoute: typeof MentorsRoute
   ParentNightOffRoute: typeof ParentNightOffRoute
   PartnershipsRoute: typeof PartnershipsRoute
+  RegisterRoute: typeof RegisterRoute
+  ScheduleACallRoute: typeof ScheduleACallRoute
   SmileRoute: typeof SmileRoute
   SmileWorkshopsRoute: typeof SmileWorkshopsRoute
   SummerIntensiveRoute: typeof SummerIntensiveRoute
@@ -293,11 +345,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlumniFellowshipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/enroll': {
       id: '/enroll'
       path: '/enroll'
       fullPath: '/enroll'
       preLoaderRoute: typeof EnrollRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/families': {
@@ -370,6 +436,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PartnershipsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule-a-call': {
+      id: '/schedule-a-call'
+      path: '/schedule-a-call'
+      fullPath: '/schedule-a-call'
+      preLoaderRoute: typeof ScheduleACallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/smile': {
       id: '/smile'
       path: '/smile'
@@ -418,7 +498,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlumniFellowshipRoute: AlumniFellowshipRoute,
+  ContactRoute: ContactRoute,
   EnrollRoute: EnrollRoute,
+  EventsRoute: EventsRoute,
   FamiliesRoute: FamiliesRoute,
   FamilyRegistrationRoute: FamilyRegistrationRoute,
   FellowshipRoute: FellowshipRoute,
@@ -429,6 +511,8 @@ const rootRouteChildren: RootRouteChildren = {
   MentorsRoute: MentorsRoute,
   ParentNightOffRoute: ParentNightOffRoute,
   PartnershipsRoute: PartnershipsRoute,
+  RegisterRoute: RegisterRoute,
+  ScheduleACallRoute: ScheduleACallRoute,
   SmileRoute: SmileRoute,
   SmileWorkshopsRoute: SmileWorkshopsRoute,
   SummerIntensiveRoute: SummerIntensiveRoute,
