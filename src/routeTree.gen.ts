@@ -13,6 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlumniFellowshipRouteImport } from './routes/alumni-fellowship'
 import { Route as FellowshipRouteImport } from './routes/fellowship'
 import { Route as LearningLabsRouteImport } from './routes/learning-labs'
+import { Route as PartnershipsRouteImport } from './routes/partnerships'
+import { Route as SmileRouteImport } from './routes/smile'
+import { Route as SmileWorkshopsRouteImport } from './routes/smile-workshops'
 import { Route as SummerIntensiveRouteImport } from './routes/summer-intensive'
 import { Route as VirtualCampusRouteImport } from './routes/virtual-campus'
 import { Route as VirtualCampusLoginRouteImport } from './routes/virtual-campus-login'
@@ -36,6 +39,21 @@ const FellowshipRoute = FellowshipRouteImport.update({
 const LearningLabsRoute = LearningLabsRouteImport.update({
   id: '/learning-labs',
   path: '/learning-labs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnershipsRoute = PartnershipsRouteImport.update({
+  id: '/partnerships',
+  path: '/partnerships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SmileRoute = SmileRouteImport.update({
+  id: '/smile',
+  path: '/smile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SmileWorkshopsRoute = SmileWorkshopsRouteImport.update({
+  id: '/smile-workshops',
+  path: '/smile-workshops',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SummerIntensiveRoute = SummerIntensiveRouteImport.update({
@@ -64,6 +82,9 @@ export interface FileRoutesByFullPath {
   '/alumni-fellowship': typeof AlumniFellowshipRoute
   '/fellowship': typeof FellowshipRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/smile': typeof SmileRoute
+  '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
   '/virtual-campus': typeof VirtualCampusRoute
   '/virtual-campus-login': typeof VirtualCampusLoginRoute
@@ -74,6 +95,9 @@ export interface FileRoutesByTo {
   '/alumni-fellowship': typeof AlumniFellowshipRoute
   '/fellowship': typeof FellowshipRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/smile': typeof SmileRoute
+  '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
   '/virtual-campus': typeof VirtualCampusRoute
   '/virtual-campus-login': typeof VirtualCampusLoginRoute
@@ -85,6 +109,9 @@ export interface FileRoutesById {
   '/alumni-fellowship': typeof AlumniFellowshipRoute
   '/fellowship': typeof FellowshipRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/smile': typeof SmileRoute
+  '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
   '/virtual-campus': typeof VirtualCampusRoute
   '/virtual-campus-login': typeof VirtualCampusLoginRoute
@@ -97,6 +124,9 @@ export interface FileRouteTypes {
     | '/alumni-fellowship'
     | '/fellowship'
     | '/learning-labs'
+    | '/partnerships'
+    | '/smile'
+    | '/smile-workshops'
     | '/summer-intensive'
     | '/virtual-campus'
     | '/virtual-campus-login'
@@ -107,6 +137,9 @@ export interface FileRouteTypes {
     | '/alumni-fellowship'
     | '/fellowship'
     | '/learning-labs'
+    | '/partnerships'
+    | '/smile'
+    | '/smile-workshops'
     | '/summer-intensive'
     | '/virtual-campus'
     | '/virtual-campus-login'
@@ -117,6 +150,9 @@ export interface FileRouteTypes {
     | '/alumni-fellowship'
     | '/fellowship'
     | '/learning-labs'
+    | '/partnerships'
+    | '/smile'
+    | '/smile-workshops'
     | '/summer-intensive'
     | '/virtual-campus'
     | '/virtual-campus-login'
@@ -128,6 +164,9 @@ export interface RootRouteChildren {
   AlumniFellowshipRoute: typeof AlumniFellowshipRoute
   FellowshipRoute: typeof FellowshipRoute
   LearningLabsRoute: typeof LearningLabsRoute
+  PartnershipsRoute: typeof PartnershipsRoute
+  SmileRoute: typeof SmileRoute
+  SmileWorkshopsRoute: typeof SmileWorkshopsRoute
   SummerIntensiveRoute: typeof SummerIntensiveRoute
   VirtualCampusRoute: typeof VirtualCampusRoute
   VirtualCampusLoginRoute: typeof VirtualCampusLoginRoute
@@ -162,6 +201,27 @@ declare module '@tanstack/react-router' {
       path: '/learning-labs'
       fullPath: '/learning-labs'
       preLoaderRoute: typeof LearningLabsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partnerships': {
+      id: '/partnerships'
+      path: '/partnerships'
+      fullPath: '/partnerships'
+      preLoaderRoute: typeof PartnershipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/smile': {
+      id: '/smile'
+      path: '/smile'
+      fullPath: '/smile'
+      preLoaderRoute: typeof SmileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/smile-workshops': {
+      id: '/smile-workshops'
+      path: '/smile-workshops'
+      fullPath: '/smile-workshops'
+      preLoaderRoute: typeof SmileWorkshopsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/summer-intensive': {
@@ -200,6 +260,9 @@ const rootRouteChildren: RootRouteChildren = {
   AlumniFellowshipRoute: AlumniFellowshipRoute,
   FellowshipRoute: FellowshipRoute,
   LearningLabsRoute: LearningLabsRoute,
+  PartnershipsRoute: PartnershipsRoute,
+  SmileRoute: SmileRoute,
+  SmileWorkshopsRoute: SmileWorkshopsRoute,
   SummerIntensiveRoute: SummerIntensiveRoute,
   VirtualCampusRoute: VirtualCampusRoute,
   VirtualCampusLoginRoute: VirtualCampusLoginRoute,
