@@ -31,16 +31,16 @@ export const Route = createFileRoute("/fellowship")({
 });
 
 const COMPONENTS: { title: string; body: string }[] = [
-  ["Academic Development", "Literacy, mathematics, strategic thinking, and school success."],
-  ["Enrichment", "Creative, cultural, and interest-driven learning experiences."],
-  ["Brotherhood", "Belonging, shared norms, accountability, and peer support."],
-  ["PASE", "Purpose, Awareness, and Self-Empowerment."],
-  ["Entrepreneurship", "From idea to plan, brand, presentation, and launch."],
-  ["Social Skills", "Communication, collaboration, and conflict navigation."],
-  ["Emotional Intelligence", "Self-awareness, regulation, and empathy in practice."],
-  ["Executive Functioning", "Planning, organization, task initiation, and follow-through."],
-  ["Mentorship", "A weekly scheduled meeting with a trained Strong Minds mentor."],
-  ["Leadership", "Responsibility, initiative, service, and leading self and others."],
+  { title: "Academic Development", body: "Literacy, mathematics, strategic thinking, and school success." },
+  { title: "Enrichment", body: "Creative, cultural, and interest-driven learning experiences." },
+  { title: "Brotherhood", body: "Belonging, shared norms, accountability, and peer support." },
+  { title: "PASE", body: "Purpose, Awareness, and Self-Empowerment." },
+  { title: "Entrepreneurship", body: "From idea to plan, brand, presentation, and launch." },
+  { title: "Social Skills", body: "Communication, collaboration, and conflict navigation." },
+  { title: "Emotional Intelligence", body: "Self-awareness, regulation, and empathy in practice." },
+  { title: "Executive Functioning", body: "Planning, organization, task initiation, and follow-through." },
+  { title: "Mentorship", body: "A weekly scheduled meeting with a trained Strong Minds mentor." },
+  { title: "Leadership", body: "Responsibility, initiative, service, and leading self and others." },
 ];
 
 const JOURNEY = [
@@ -103,9 +103,9 @@ function Fellowship() {
       <Section tone="sand">
         <SectionHead eyebrow="Program components" title="Ten Connected Components" />
         <Grid className="mt-8" cols={2}>
-          {COMPONENTS.map(([title, body]) => (
-            <InfoCard key={title} title={title}>
-              {body}
+          {COMPONENTS.map((c) => (
+            <InfoCard key={c.title} title={c.title}>
+              {c.body}
             </InfoCard>
           ))}
         </Grid>
