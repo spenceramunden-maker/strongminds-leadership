@@ -231,7 +231,7 @@ export function LeadForm(props: LeadFormProps) {
                   type={type}
                   required={field.required}
                   placeholder={field.placeholder}
-                  maxLength={type === "textarea" ? 2000 : 255}
+                  maxLength={255}
                   value={(values[field.name] as string) ?? ""}
                   onChange={(e) => set(field.name, e.target.value)}
                   className={inputClass}
