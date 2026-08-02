@@ -10,33 +10,401 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AlumniFellowshipRouteImport } from './routes/alumni-fellowship'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as EnrollRouteImport } from './routes/enroll'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as FamiliesRouteImport } from './routes/families'
+import { Route as FamilyRegistrationRouteImport } from './routes/family-registration'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FellowshipRouteImport } from './routes/fellowship'
+import { Route as FounderRouteImport } from './routes/founder'
+import { Route as InformationSessionRouteImport } from './routes/information-session'
+import { Route as InterestRouteImport } from './routes/interest'
+import { Route as LearningLabsRouteImport } from './routes/learning-labs'
+import { Route as MentorInterestRouteImport } from './routes/mentor-interest'
+import { Route as MentorsRouteImport } from './routes/mentors'
+import { Route as ParentNightOffRouteImport } from './routes/parent-night-off'
+import { Route as PartnershipsRouteImport } from './routes/partnerships'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ScheduleACallRouteImport } from './routes/schedule-a-call'
+import { Route as SmileRouteImport } from './routes/smile'
+import { Route as SmileWorkshopsRouteImport } from './routes/smile-workshops'
+import { Route as SummerIntensiveRouteImport } from './routes/summer-intensive'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as VirtualCampusRouteImport } from './routes/virtual-campus'
+import { Route as VirtualCampusLoginRouteImport } from './routes/virtual-campus-login'
+import { Route as YouthAcademyRouteImport } from './routes/youth-academy'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlumniFellowshipRoute = AlumniFellowshipRouteImport.update({
+  id: '/alumni-fellowship',
+  path: '/alumni-fellowship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnrollRoute = EnrollRouteImport.update({
+  id: '/enroll',
+  path: '/enroll',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FamiliesRoute = FamiliesRouteImport.update({
+  id: '/families',
+  path: '/families',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FamilyRegistrationRoute = FamilyRegistrationRouteImport.update({
+  id: '/family-registration',
+  path: '/family-registration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FellowshipRoute = FellowshipRouteImport.update({
+  id: '/fellowship',
+  path: '/fellowship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FounderRoute = FounderRouteImport.update({
+  id: '/founder',
+  path: '/founder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InformationSessionRoute = InformationSessionRouteImport.update({
+  id: '/information-session',
+  path: '/information-session',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterestRoute = InterestRouteImport.update({
+  id: '/interest',
+  path: '/interest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearningLabsRoute = LearningLabsRouteImport.update({
+  id: '/learning-labs',
+  path: '/learning-labs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentorInterestRoute = MentorInterestRouteImport.update({
+  id: '/mentor-interest',
+  path: '/mentor-interest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentorsRoute = MentorsRouteImport.update({
+  id: '/mentors',
+  path: '/mentors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentNightOffRoute = ParentNightOffRouteImport.update({
+  id: '/parent-night-off',
+  path: '/parent-night-off',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnershipsRoute = PartnershipsRouteImport.update({
+  id: '/partnerships',
+  path: '/partnerships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleACallRoute = ScheduleACallRouteImport.update({
+  id: '/schedule-a-call',
+  path: '/schedule-a-call',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SmileRoute = SmileRouteImport.update({
+  id: '/smile',
+  path: '/smile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SmileWorkshopsRoute = SmileWorkshopsRouteImport.update({
+  id: '/smile-workshops',
+  path: '/smile-workshops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SummerIntensiveRoute = SummerIntensiveRouteImport.update({
+  id: '/summer-intensive',
+  path: '/summer-intensive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VirtualCampusRoute = VirtualCampusRouteImport.update({
+  id: '/virtual-campus',
+  path: '/virtual-campus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VirtualCampusLoginRoute = VirtualCampusLoginRouteImport.update({
+  id: '/virtual-campus-login',
+  path: '/virtual-campus-login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YouthAcademyRoute = YouthAcademyRouteImport.update({
+  id: '/youth-academy',
+  path: '/youth-academy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/contact': typeof ContactRoute
+  '/enroll': typeof EnrollRoute
+  '/events': typeof EventsRoute
+  '/families': typeof FamiliesRoute
+  '/family-registration': typeof FamilyRegistrationRoute
+  '/faq': typeof FaqRoute
+  '/fellowship': typeof FellowshipRoute
+  '/founder': typeof FounderRoute
+  '/information-session': typeof InformationSessionRoute
+  '/interest': typeof InterestRoute
+  '/learning-labs': typeof LearningLabsRoute
+  '/mentor-interest': typeof MentorInterestRoute
+  '/mentors': typeof MentorsRoute
+  '/parent-night-off': typeof ParentNightOffRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/register': typeof RegisterRoute
+  '/schedule-a-call': typeof ScheduleACallRoute
+  '/smile': typeof SmileRoute
+  '/smile-workshops': typeof SmileWorkshopsRoute
+  '/summer-intensive': typeof SummerIntensiveRoute
+  '/terms': typeof TermsRoute
+  '/virtual-campus': typeof VirtualCampusRoute
+  '/virtual-campus-login': typeof VirtualCampusLoginRoute
+  '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/contact': typeof ContactRoute
+  '/enroll': typeof EnrollRoute
+  '/events': typeof EventsRoute
+  '/families': typeof FamiliesRoute
+  '/family-registration': typeof FamilyRegistrationRoute
+  '/faq': typeof FaqRoute
+  '/fellowship': typeof FellowshipRoute
+  '/founder': typeof FounderRoute
+  '/information-session': typeof InformationSessionRoute
+  '/interest': typeof InterestRoute
+  '/learning-labs': typeof LearningLabsRoute
+  '/mentor-interest': typeof MentorInterestRoute
+  '/mentors': typeof MentorsRoute
+  '/parent-night-off': typeof ParentNightOffRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/register': typeof RegisterRoute
+  '/schedule-a-call': typeof ScheduleACallRoute
+  '/smile': typeof SmileRoute
+  '/smile-workshops': typeof SmileWorkshopsRoute
+  '/summer-intensive': typeof SummerIntensiveRoute
+  '/terms': typeof TermsRoute
+  '/virtual-campus': typeof VirtualCampusRoute
+  '/virtual-campus-login': typeof VirtualCampusLoginRoute
+  '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/contact': typeof ContactRoute
+  '/enroll': typeof EnrollRoute
+  '/events': typeof EventsRoute
+  '/families': typeof FamiliesRoute
+  '/family-registration': typeof FamilyRegistrationRoute
+  '/faq': typeof FaqRoute
+  '/fellowship': typeof FellowshipRoute
+  '/founder': typeof FounderRoute
+  '/information-session': typeof InformationSessionRoute
+  '/interest': typeof InterestRoute
+  '/learning-labs': typeof LearningLabsRoute
+  '/mentor-interest': typeof MentorInterestRoute
+  '/mentors': typeof MentorsRoute
+  '/parent-night-off': typeof ParentNightOffRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/register': typeof RegisterRoute
+  '/schedule-a-call': typeof ScheduleACallRoute
+  '/smile': typeof SmileRoute
+  '/smile-workshops': typeof SmileWorkshopsRoute
+  '/summer-intensive': typeof SummerIntensiveRoute
+  '/terms': typeof TermsRoute
+  '/virtual-campus': typeof VirtualCampusRoute
+  '/virtual-campus-login': typeof VirtualCampusLoginRoute
+  '/youth-academy': typeof YouthAcademyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/alumni-fellowship'
+    | '/contact'
+    | '/enroll'
+    | '/events'
+    | '/families'
+    | '/family-registration'
+    | '/faq'
+    | '/fellowship'
+    | '/founder'
+    | '/information-session'
+    | '/interest'
+    | '/learning-labs'
+    | '/mentor-interest'
+    | '/mentors'
+    | '/parent-night-off'
+    | '/partnerships'
+    | '/pricing'
+    | '/privacy'
+    | '/register'
+    | '/schedule-a-call'
+    | '/smile'
+    | '/smile-workshops'
+    | '/summer-intensive'
+    | '/terms'
+    | '/virtual-campus'
+    | '/virtual-campus-login'
+    | '/youth-academy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/alumni-fellowship'
+    | '/contact'
+    | '/enroll'
+    | '/events'
+    | '/families'
+    | '/family-registration'
+    | '/faq'
+    | '/fellowship'
+    | '/founder'
+    | '/information-session'
+    | '/interest'
+    | '/learning-labs'
+    | '/mentor-interest'
+    | '/mentors'
+    | '/parent-night-off'
+    | '/partnerships'
+    | '/pricing'
+    | '/privacy'
+    | '/register'
+    | '/schedule-a-call'
+    | '/smile'
+    | '/smile-workshops'
+    | '/summer-intensive'
+    | '/terms'
+    | '/virtual-campus'
+    | '/virtual-campus-login'
+    | '/youth-academy'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/alumni-fellowship'
+    | '/contact'
+    | '/enroll'
+    | '/events'
+    | '/families'
+    | '/family-registration'
+    | '/faq'
+    | '/fellowship'
+    | '/founder'
+    | '/information-session'
+    | '/interest'
+    | '/learning-labs'
+    | '/mentor-interest'
+    | '/mentors'
+    | '/parent-night-off'
+    | '/partnerships'
+    | '/pricing'
+    | '/privacy'
+    | '/register'
+    | '/schedule-a-call'
+    | '/smile'
+    | '/smile-workshops'
+    | '/summer-intensive'
+    | '/terms'
+    | '/virtual-campus'
+    | '/virtual-campus-login'
+    | '/youth-academy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AlumniFellowshipRoute: typeof AlumniFellowshipRoute
+  ContactRoute: typeof ContactRoute
+  EnrollRoute: typeof EnrollRoute
+  EventsRoute: typeof EventsRoute
+  FamiliesRoute: typeof FamiliesRoute
+  FamilyRegistrationRoute: typeof FamilyRegistrationRoute
+  FaqRoute: typeof FaqRoute
+  FellowshipRoute: typeof FellowshipRoute
+  FounderRoute: typeof FounderRoute
+  InformationSessionRoute: typeof InformationSessionRoute
+  InterestRoute: typeof InterestRoute
+  LearningLabsRoute: typeof LearningLabsRoute
+  MentorInterestRoute: typeof MentorInterestRoute
+  MentorsRoute: typeof MentorsRoute
+  ParentNightOffRoute: typeof ParentNightOffRoute
+  PartnershipsRoute: typeof PartnershipsRoute
+  PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  RegisterRoute: typeof RegisterRoute
+  ScheduleACallRoute: typeof ScheduleACallRoute
+  SmileRoute: typeof SmileRoute
+  SmileWorkshopsRoute: typeof SmileWorkshopsRoute
+  SummerIntensiveRoute: typeof SummerIntensiveRoute
+  TermsRoute: typeof TermsRoute
+  VirtualCampusRoute: typeof VirtualCampusRoute
+  VirtualCampusLoginRoute: typeof VirtualCampusLoginRoute
+  YouthAcademyRoute: typeof YouthAcademyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +416,236 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alumni-fellowship': {
+      id: '/alumni-fellowship'
+      path: '/alumni-fellowship'
+      fullPath: '/alumni-fellowship'
+      preLoaderRoute: typeof AlumniFellowshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enroll': {
+      id: '/enroll'
+      path: '/enroll'
+      fullPath: '/enroll'
+      preLoaderRoute: typeof EnrollRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/families': {
+      id: '/families'
+      path: '/families'
+      fullPath: '/families'
+      preLoaderRoute: typeof FamiliesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/family-registration': {
+      id: '/family-registration'
+      path: '/family-registration'
+      fullPath: '/family-registration'
+      preLoaderRoute: typeof FamilyRegistrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fellowship': {
+      id: '/fellowship'
+      path: '/fellowship'
+      fullPath: '/fellowship'
+      preLoaderRoute: typeof FellowshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/founder': {
+      id: '/founder'
+      path: '/founder'
+      fullPath: '/founder'
+      preLoaderRoute: typeof FounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/information-session': {
+      id: '/information-session'
+      path: '/information-session'
+      fullPath: '/information-session'
+      preLoaderRoute: typeof InformationSessionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interest': {
+      id: '/interest'
+      path: '/interest'
+      fullPath: '/interest'
+      preLoaderRoute: typeof InterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learning-labs': {
+      id: '/learning-labs'
+      path: '/learning-labs'
+      fullPath: '/learning-labs'
+      preLoaderRoute: typeof LearningLabsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentor-interest': {
+      id: '/mentor-interest'
+      path: '/mentor-interest'
+      fullPath: '/mentor-interest'
+      preLoaderRoute: typeof MentorInterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentors': {
+      id: '/mentors'
+      path: '/mentors'
+      fullPath: '/mentors'
+      preLoaderRoute: typeof MentorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent-night-off': {
+      id: '/parent-night-off'
+      path: '/parent-night-off'
+      fullPath: '/parent-night-off'
+      preLoaderRoute: typeof ParentNightOffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partnerships': {
+      id: '/partnerships'
+      path: '/partnerships'
+      fullPath: '/partnerships'
+      preLoaderRoute: typeof PartnershipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule-a-call': {
+      id: '/schedule-a-call'
+      path: '/schedule-a-call'
+      fullPath: '/schedule-a-call'
+      preLoaderRoute: typeof ScheduleACallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/smile': {
+      id: '/smile'
+      path: '/smile'
+      fullPath: '/smile'
+      preLoaderRoute: typeof SmileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/smile-workshops': {
+      id: '/smile-workshops'
+      path: '/smile-workshops'
+      fullPath: '/smile-workshops'
+      preLoaderRoute: typeof SmileWorkshopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/summer-intensive': {
+      id: '/summer-intensive'
+      path: '/summer-intensive'
+      fullPath: '/summer-intensive'
+      preLoaderRoute: typeof SummerIntensiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/virtual-campus': {
+      id: '/virtual-campus'
+      path: '/virtual-campus'
+      fullPath: '/virtual-campus'
+      preLoaderRoute: typeof VirtualCampusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/virtual-campus-login': {
+      id: '/virtual-campus-login'
+      path: '/virtual-campus-login'
+      fullPath: '/virtual-campus-login'
+      preLoaderRoute: typeof VirtualCampusLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/youth-academy': {
+      id: '/youth-academy'
+      path: '/youth-academy'
+      fullPath: '/youth-academy'
+      preLoaderRoute: typeof YouthAcademyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AlumniFellowshipRoute: AlumniFellowshipRoute,
+  ContactRoute: ContactRoute,
+  EnrollRoute: EnrollRoute,
+  EventsRoute: EventsRoute,
+  FamiliesRoute: FamiliesRoute,
+  FamilyRegistrationRoute: FamilyRegistrationRoute,
+  FaqRoute: FaqRoute,
+  FellowshipRoute: FellowshipRoute,
+  FounderRoute: FounderRoute,
+  InformationSessionRoute: InformationSessionRoute,
+  InterestRoute: InterestRoute,
+  LearningLabsRoute: LearningLabsRoute,
+  MentorInterestRoute: MentorInterestRoute,
+  MentorsRoute: MentorsRoute,
+  ParentNightOffRoute: ParentNightOffRoute,
+  PartnershipsRoute: PartnershipsRoute,
+  PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
+  RegisterRoute: RegisterRoute,
+  ScheduleACallRoute: ScheduleACallRoute,
+  SmileRoute: SmileRoute,
+  SmileWorkshopsRoute: SmileWorkshopsRoute,
+  SummerIntensiveRoute: SummerIntensiveRoute,
+  TermsRoute: TermsRoute,
+  VirtualCampusRoute: VirtualCampusRoute,
+  VirtualCampusLoginRoute: VirtualCampusLoginRoute,
+  YouthAcademyRoute: YouthAcademyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
