@@ -11,8 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlumniFellowshipRouteImport } from './routes/alumni-fellowship'
+import { Route as FamiliesRouteImport } from './routes/families'
+import { Route as FamilyRegistrationRouteImport } from './routes/family-registration'
 import { Route as FellowshipRouteImport } from './routes/fellowship'
 import { Route as LearningLabsRouteImport } from './routes/learning-labs'
+import { Route as MentorsRouteImport } from './routes/mentors'
+import { Route as ParentNightOffRouteImport } from './routes/parent-night-off'
 import { Route as PartnershipsRouteImport } from './routes/partnerships'
 import { Route as SmileRouteImport } from './routes/smile'
 import { Route as SmileWorkshopsRouteImport } from './routes/smile-workshops'
@@ -31,6 +35,16 @@ const AlumniFellowshipRoute = AlumniFellowshipRouteImport.update({
   path: '/alumni-fellowship',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FamiliesRoute = FamiliesRouteImport.update({
+  id: '/families',
+  path: '/families',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FamilyRegistrationRoute = FamilyRegistrationRouteImport.update({
+  id: '/family-registration',
+  path: '/family-registration',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FellowshipRoute = FellowshipRouteImport.update({
   id: '/fellowship',
   path: '/fellowship',
@@ -39,6 +53,16 @@ const FellowshipRoute = FellowshipRouteImport.update({
 const LearningLabsRoute = LearningLabsRouteImport.update({
   id: '/learning-labs',
   path: '/learning-labs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentorsRoute = MentorsRouteImport.update({
+  id: '/mentors',
+  path: '/mentors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentNightOffRoute = ParentNightOffRouteImport.update({
+  id: '/parent-night-off',
+  path: '/parent-night-off',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PartnershipsRoute = PartnershipsRouteImport.update({
@@ -80,8 +104,12 @@ const YouthAcademyRoute = YouthAcademyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/families': typeof FamiliesRoute
+  '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/mentors': typeof MentorsRoute
+  '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
@@ -93,8 +121,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/families': typeof FamiliesRoute
+  '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/mentors': typeof MentorsRoute
+  '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
@@ -107,8 +139,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/families': typeof FamiliesRoute
+  '/family-registration': typeof FamilyRegistrationRoute
   '/fellowship': typeof FellowshipRoute
   '/learning-labs': typeof LearningLabsRoute
+  '/mentors': typeof MentorsRoute
+  '/parent-night-off': typeof ParentNightOffRoute
   '/partnerships': typeof PartnershipsRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
@@ -122,8 +158,12 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/alumni-fellowship'
+    | '/families'
+    | '/family-registration'
     | '/fellowship'
     | '/learning-labs'
+    | '/mentors'
+    | '/parent-night-off'
     | '/partnerships'
     | '/smile'
     | '/smile-workshops'
@@ -135,8 +175,12 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/alumni-fellowship'
+    | '/families'
+    | '/family-registration'
     | '/fellowship'
     | '/learning-labs'
+    | '/mentors'
+    | '/parent-night-off'
     | '/partnerships'
     | '/smile'
     | '/smile-workshops'
@@ -148,8 +192,12 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/alumni-fellowship'
+    | '/families'
+    | '/family-registration'
     | '/fellowship'
     | '/learning-labs'
+    | '/mentors'
+    | '/parent-night-off'
     | '/partnerships'
     | '/smile'
     | '/smile-workshops'
@@ -162,8 +210,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlumniFellowshipRoute: typeof AlumniFellowshipRoute
+  FamiliesRoute: typeof FamiliesRoute
+  FamilyRegistrationRoute: typeof FamilyRegistrationRoute
   FellowshipRoute: typeof FellowshipRoute
   LearningLabsRoute: typeof LearningLabsRoute
+  MentorsRoute: typeof MentorsRoute
+  ParentNightOffRoute: typeof ParentNightOffRoute
   PartnershipsRoute: typeof PartnershipsRoute
   SmileRoute: typeof SmileRoute
   SmileWorkshopsRoute: typeof SmileWorkshopsRoute
@@ -189,6 +241,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlumniFellowshipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/families': {
+      id: '/families'
+      path: '/families'
+      fullPath: '/families'
+      preLoaderRoute: typeof FamiliesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/family-registration': {
+      id: '/family-registration'
+      path: '/family-registration'
+      fullPath: '/family-registration'
+      preLoaderRoute: typeof FamilyRegistrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fellowship': {
       id: '/fellowship'
       path: '/fellowship'
@@ -201,6 +267,20 @@ declare module '@tanstack/react-router' {
       path: '/learning-labs'
       fullPath: '/learning-labs'
       preLoaderRoute: typeof LearningLabsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentors': {
+      id: '/mentors'
+      path: '/mentors'
+      fullPath: '/mentors'
+      preLoaderRoute: typeof MentorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent-night-off': {
+      id: '/parent-night-off'
+      path: '/parent-night-off'
+      fullPath: '/parent-night-off'
+      preLoaderRoute: typeof ParentNightOffRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/partnerships': {
@@ -258,8 +338,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlumniFellowshipRoute: AlumniFellowshipRoute,
+  FamiliesRoute: FamiliesRoute,
+  FamilyRegistrationRoute: FamilyRegistrationRoute,
   FellowshipRoute: FellowshipRoute,
   LearningLabsRoute: LearningLabsRoute,
+  MentorsRoute: MentorsRoute,
+  ParentNightOffRoute: ParentNightOffRoute,
   PartnershipsRoute: PartnershipsRoute,
   SmileRoute: SmileRoute,
   SmileWorkshopsRoute: SmileWorkshopsRoute,
