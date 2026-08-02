@@ -30,7 +30,7 @@ export const Route = createFileRoute("/fellowship")({
   component: Fellowship,
 });
 
-const COMPONENTS = [
+const COMPONENTS: { title: string; body: string }[] = [
   ["Academic Development", "Literacy, mathematics, strategic thinking, and school success."],
   ["Enrichment", "Creative, cultural, and interest-driven learning experiences."],
   ["Brotherhood", "Belonging, shared norms, accountability, and peer support."],
