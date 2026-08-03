@@ -629,6 +629,22 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_valid_lead_submission: {
+        Args: {
+          _consent: boolean
+          _details: Json
+          _email: string
+          _expected_source: string
+          _follow_up_date: string
+          _follow_up_owner: string
+          _name: string
+          _notes: string
+          _phone: string
+          _source_form: string
+          _status: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
       app_role: "admin"
