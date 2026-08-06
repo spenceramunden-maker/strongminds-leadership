@@ -29,15 +29,15 @@ export function Header() {
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <span
             aria-hidden
-            className="grid h-10 w-10 place-items-center rounded-md bg-gold font-display text-lg font-extrabold text-gold-foreground"
+            className="grid h-11 w-11 place-items-center rounded-sm border border-gold/60 bg-ink monogram text-lg text-gold"
           >
             SM
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-sm font-extrabold uppercase tracking-wide text-ink-foreground">
+            <span className="block font-display text-base font-semibold tracking-[0.02em] text-ink-foreground">
               Strong Minds
             </span>
-            <span className="block text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+            <span className="block text-[10px] uppercase tracking-[0.26em] text-gold/80">
               Leadership Academy
             </span>
           </span>

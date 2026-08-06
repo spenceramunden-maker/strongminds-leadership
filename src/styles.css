@@ -5,7 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-label: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -77,40 +78,40 @@
 
 :root {
   --radius: 0.375rem;
-  --background: oklch(0.98 0.006 85);
-  --foreground: oklch(0.22 0.032 257);
+  --background: oklch(0.985 0.004 85);
+  --foreground: oklch(0.18 0.002 85);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.032 257);
+  --card-foreground: oklch(0.18 0.002 85);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.032 257);
-  --primary: oklch(0.29 0.055 258);
+  --popover-foreground: oklch(0.18 0.002 85);
+  --primary: oklch(0.17 0.002 85);
   --primary-foreground: oklch(0.985 0.004 85);
   --secondary: oklch(0.945 0.012 85);
-  --secondary-foreground: oklch(0.29 0.055 258);
+  --secondary-foreground: oklch(0.17 0.002 85);
   --muted: oklch(0.955 0.008 85);
-  --muted-foreground: oklch(0.5 0.02 257);
-  --accent: oklch(0.76 0.148 63);
-  --accent-foreground: oklch(0.21 0.04 258);
+  --muted-foreground: oklch(0.48 0.006 85);
+  --accent: oklch(0.76 0.135 76);
+  --accent-foreground: oklch(0.15 0.002 85);
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.985 0.004 85);
   --border: oklch(0.9 0.012 85);
   --input: oklch(0.9 0.012 85);
-  --ring: oklch(0.76 0.148 63);
+  --ring: oklch(0.76 0.135 76);
 
-  --ink: oklch(0.21 0.04 258);
+  --ink: oklch(0.14 0.002 85);
   --ink-foreground: oklch(0.97 0.008 85);
-  --ink-muted: oklch(0.78 0.022 257);
-  --brand: oklch(0.29 0.055 258);
+  --ink-muted: oklch(0.76 0.008 85);
+  --brand: oklch(0.15 0.002 85);
   --brand-foreground: oklch(0.985 0.004 85);
-  --gold: oklch(0.76 0.148 63);
-  --gold-foreground: oklch(0.21 0.04 258);
+  --gold: oklch(0.77 0.135 78);
+  --gold-foreground: oklch(0.14 0.002 85);
   --teal: oklch(0.56 0.085 196);
   --sand: oklch(0.945 0.016 82);
 
-  --gradient-ink: linear-gradient(160deg, oklch(0.24 0.045 258) 0%, oklch(0.17 0.035 260) 100%);
-  --gradient-gold: linear-gradient(100deg, oklch(0.79 0.14 72), oklch(0.72 0.155 52));
-  --shadow-card: 0 1px 2px oklch(0.21 0.04 258 / 0.06), 0 12px 32px -18px oklch(0.21 0.04 258 / 0.35);
-  --shadow-lift: 0 2px 4px oklch(0.21 0.04 258 / 0.08), 0 24px 48px -24px oklch(0.21 0.04 258 / 0.45);
+  --gradient-ink: linear-gradient(160deg, oklch(0.19 0.003 85) 0%, oklch(0.11 0.002 85) 100%);
+  --gradient-gold: linear-gradient(100deg, oklch(0.84 0.115 88), oklch(0.72 0.135 70));
+  --shadow-card: 0 1px 2px oklch(0.14 0.002 85 / 0.07), 0 12px 32px -18px oklch(0.14 0.002 85 / 0.4);
+  --shadow-lift: 0 2px 4px oklch(0.14 0.002 85 / 0.09), 0 24px 48px -24px oklch(0.14 0.002 85 / 0.5);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -175,8 +176,8 @@
 
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -0.015em;
     text-wrap: balance;
   }
 }
@@ -189,10 +190,10 @@
 }
 
 @utility eyebrow {
-  font-family: var(--font-display);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
 }
@@ -203,9 +204,10 @@
   justify-content: center;
   gap: 0.5rem;
   border-radius: var(--radius);
-  font-family: var(--font-display);
+  font-family: var(--font-label);
   font-weight: 700;
   font-size: 0.9375rem;
+  letter-spacing: 0.04em;
   line-height: 1;
   padding: 0.875rem 1.375rem;
   transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -225,7 +227,14 @@
 @utility btn-ink {
   background-color: var(--ink);
   color: var(--ink-foreground);
-  &:hover { background-color: oklch(0.27 0.05 258); }
+  &:hover { background-color: oklch(0.24 0.003 85); }
+}
+
+@utility monogram {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-feature-settings: "liga" 1;
 }
 
 @utility btn-outline-ink {
