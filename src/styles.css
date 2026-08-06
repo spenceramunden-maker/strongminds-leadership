@@ -176,8 +176,8 @@
 
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -0.015em;
     text-wrap: balance;
   }
 }
@@ -190,10 +190,10 @@
 }
 
 @utility eyebrow {
-  font-family: var(--font-display);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
 }
@@ -204,9 +204,10 @@
   justify-content: center;
   gap: 0.5rem;
   border-radius: var(--radius);
-  font-family: var(--font-display);
+  font-family: var(--font-label);
   font-weight: 700;
   font-size: 0.9375rem;
+  letter-spacing: 0.04em;
   line-height: 1;
   padding: 0.875rem 1.375rem;
   transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -226,7 +227,14 @@
 @utility btn-ink {
   background-color: var(--ink);
   color: var(--ink-foreground);
-  &:hover { background-color: oklch(0.27 0.05 258); }
+  &:hover { background-color: oklch(0.24 0.003 85); }
+}
+
+@utility monogram {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-feature-settings: "liga" 1;
 }
 
 @utility btn-outline-ink {
