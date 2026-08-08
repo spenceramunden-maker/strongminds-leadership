@@ -151,6 +151,29 @@ function YouthAcademy() {
             Parent Night Off events during the program year.
           </InfoCard>
           <InfoCard
+            title="Short-Term Programs"
+            footer={
+              <CTA to="/short-programs" variant="ink">
+                Explore Short-Term Programs
+              </CTA>
+            }
+          >
+            Shorter entry points into Strong Minds: the 10 Day Sprint, the one-week Winning Week
+            training, a 1-Day Trial inside a live program day, and the Weekend Warrior access pass to
+            in-person weekend experiences.
+          </InfoCard>
+          <InfoCard
+            title="Cohort Programs"
+            footer={
+              <CTA to="/cohort-programs" variant="ink">
+                Explore Cohort Programs
+              </CTA>
+            }
+          >
+            The one-month Minds-Ship, the three-month Enrichment Fellowship, and the semester-long
+            Strong Semester afterschool training program.
+          </InfoCard>
+          <InfoCard
             title="Alumni Fellowship"
             footer={
               <CTA to="/alumni-fellowship" variant="ink">
