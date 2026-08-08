@@ -1154,16 +1154,12 @@ Do not claim they are active.
 Store the submissions.
 Provide exact setup instructions.
 Identify a free or manual alternative.
- 26. PUBLIC CONTACT LABELS
+26. PUBLIC CONTACT LABELS
 Display these as visual labels:
-mailto:info@strongmindsacademy.org
-mailto:register@strongmindsacademy.org
-mailto:families@strongmindsacademy.org
-mailto:events@strongmindsacademy.org
-mailto:mentors@strongmindsacademy.org
-mailto:partnerships@strongmindsacademy.org
-These are placeholders until the domain and forwarding are active.
-Do not make them clickable mail links unless confirmed active.
+mailto:info@strongmindsleadershipacademy.org
+mailto:founder@strongmindsleadershipacademy.org
+These addresses route to the Strong Minds team and founder office.
+Make them clickable mail links.
  27. CONFIRMATION PAGES
 After every form submission, display:
 Thank you. Your information has been received by the Strong Minds team. We will review your submission and follow up using the contact information you provided.

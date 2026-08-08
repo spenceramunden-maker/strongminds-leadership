@@ -44,12 +44,8 @@ const GROUPS: { heading: string; links: { label: string; to: string }[] }[] = [
 ];
 
 const CONTACT_LABELS = [
-  "info@strongmindsacademy.org",
-  "register@strongmindsacademy.org",
-  "families@strongmindsacademy.org",
-  "events@strongmindsacademy.org",
-  "mentors@strongmindsacademy.org",
-  "partnerships@strongmindsacademy.org",
+  "info@strongmindsleadershipacademy.org",
+  "founder@strongmindsleadershipacademy.org",
 ];
 
 export function Footer() {
