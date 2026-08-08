@@ -31,6 +31,7 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ScheduleACallRouteImport } from './routes/schedule-a-call'
+import { Route as ShortProgramsRouteImport } from './routes/short-programs'
 import { Route as SmileRouteImport } from './routes/smile'
 import { Route as SmileWorkshopsRouteImport } from './routes/smile-workshops'
 import { Route as SummerIntensiveRouteImport } from './routes/summer-intensive'
@@ -149,6 +150,11 @@ const ScheduleACallRoute = ScheduleACallRouteImport.update({
   path: '/schedule-a-call',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShortProgramsRoute = ShortProgramsRouteImport.update({
+  id: '/short-programs',
+  path: '/short-programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SmileRoute = SmileRouteImport.update({
   id: '/smile',
   path: '/smile',
@@ -208,6 +214,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/register': typeof RegisterRoute
   '/schedule-a-call': typeof ScheduleACallRoute
+  '/short-programs': typeof ShortProgramsRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
@@ -239,6 +246,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/register': typeof RegisterRoute
   '/schedule-a-call': typeof ScheduleACallRoute
+  '/short-programs': typeof ShortProgramsRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
@@ -271,6 +279,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/register': typeof RegisterRoute
   '/schedule-a-call': typeof ScheduleACallRoute
+  '/short-programs': typeof ShortProgramsRoute
   '/smile': typeof SmileRoute
   '/smile-workshops': typeof SmileWorkshopsRoute
   '/summer-intensive': typeof SummerIntensiveRoute
@@ -304,6 +313,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/register'
     | '/schedule-a-call'
+    | '/short-programs'
     | '/smile'
     | '/smile-workshops'
     | '/summer-intensive'
@@ -335,6 +345,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/register'
     | '/schedule-a-call'
+    | '/short-programs'
     | '/smile'
     | '/smile-workshops'
     | '/summer-intensive'
@@ -366,6 +377,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/register'
     | '/schedule-a-call'
+    | '/short-programs'
     | '/smile'
     | '/smile-workshops'
     | '/summer-intensive'
@@ -398,6 +410,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   RegisterRoute: typeof RegisterRoute
   ScheduleACallRoute: typeof ScheduleACallRoute
+  ShortProgramsRoute: typeof ShortProgramsRoute
   SmileRoute: typeof SmileRoute
   SmileWorkshopsRoute: typeof SmileWorkshopsRoute
   SummerIntensiveRoute: typeof SummerIntensiveRoute
@@ -563,6 +576,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScheduleACallRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/short-programs': {
+      id: '/short-programs'
+      path: '/short-programs'
+      fullPath: '/short-programs'
+      preLoaderRoute: typeof ShortProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/smile': {
       id: '/smile'
       path: '/smile'
@@ -638,6 +658,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   RegisterRoute: RegisterRoute,
   ScheduleACallRoute: ScheduleACallRoute,
+  ShortProgramsRoute: ShortProgramsRoute,
   SmileRoute: SmileRoute,
   SmileWorkshopsRoute: SmileWorkshopsRoute,
   SummerIntensiveRoute: SummerIntensiveRoute,
