@@ -21,10 +21,6 @@ export const LEAD_STATUSES = [
 export const DIVISIONS = ["Youth Academy", "SMILE", "Families", "Mentors", "Organization"] as const;
 
 export const CONTACT_LABELS = [
-  { label: "info@strongmindsacademy.org", use: "General questions" },
-  { label: "register@strongmindsacademy.org", use: "Enrollment and registration" },
-  { label: "families@strongmindsacademy.org", use: "Family programs and workshops" },
-  { label: "events@strongmindsacademy.org", use: "Events and showcases" },
-  { label: "mentors@strongmindsacademy.org", use: "Mentor recruitment" },
-  { label: "partnerships@strongmindsacademy.org", use: "Organizations and schools" },
+  { label: "info@strongmindsleadershipacademy.org", use: "General questions" },
+  { label: "founder@strongmindsleadershipacademy.org", use: "Founder and director inquiries" },
 ];
