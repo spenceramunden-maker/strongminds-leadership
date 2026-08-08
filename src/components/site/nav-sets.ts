@@ -1,6 +1,8 @@
 export const YOUTH_SUBNAV = [
   { label: "Overview", to: "/youth-academy" },
   { label: "Summer Intensive", to: "/summer-intensive" },
+  { label: "Short-Term Programs", to: "/short-programs" },
+  { label: "Cohort Programs", to: "/cohort-programs" },
   { label: "11-Month Fellowship", to: "/fellowship" },
   { label: "Alumni Fellowship", to: "/alumni-fellowship" },
   { label: "Learning Labs", to: "/learning-labs" },

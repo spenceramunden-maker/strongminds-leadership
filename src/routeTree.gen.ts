@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AlumniFellowshipRouteImport } from './routes/alumni-fellowship'
+import { Route as CohortProgramsRouteImport } from './routes/cohort-programs'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EnrollRouteImport } from './routes/enroll'
 import { Route as EventsRouteImport } from './routes/events'
@@ -53,6 +54,11 @@ const AboutRoute = AboutRouteImport.update({
 const AlumniFellowshipRoute = AlumniFellowshipRouteImport.update({
   id: '/alumni-fellowship',
   path: '/alumni-fellowship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CohortProgramsRoute = CohortProgramsRouteImport.update({
+  id: '/cohort-programs',
+  path: '/cohort-programs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -195,6 +201,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/cohort-programs': typeof CohortProgramsRoute
   '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
   '/events': typeof EventsRoute
@@ -227,6 +234,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/cohort-programs': typeof CohortProgramsRoute
   '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
   '/events': typeof EventsRoute
@@ -260,6 +268,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/cohort-programs': typeof CohortProgramsRoute
   '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
   '/events': typeof EventsRoute
@@ -294,6 +303,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/alumni-fellowship'
+    | '/cohort-programs'
     | '/contact'
     | '/enroll'
     | '/events'
@@ -326,6 +336,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/alumni-fellowship'
+    | '/cohort-programs'
     | '/contact'
     | '/enroll'
     | '/events'
@@ -358,6 +369,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/alumni-fellowship'
+    | '/cohort-programs'
     | '/contact'
     | '/enroll'
     | '/events'
@@ -391,6 +403,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AlumniFellowshipRoute: typeof AlumniFellowshipRoute
+  CohortProgramsRoute: typeof CohortProgramsRoute
   ContactRoute: typeof ContactRoute
   EnrollRoute: typeof EnrollRoute
   EventsRoute: typeof EventsRoute
@@ -441,6 +454,13 @@ declare module '@tanstack/react-router' {
       path: '/alumni-fellowship'
       fullPath: '/alumni-fellowship'
       preLoaderRoute: typeof AlumniFellowshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cohort-programs': {
+      id: '/cohort-programs'
+      path: '/cohort-programs'
+      fullPath: '/cohort-programs'
+      preLoaderRoute: typeof CohortProgramsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -639,6 +659,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AlumniFellowshipRoute: AlumniFellowshipRoute,
+  CohortProgramsRoute: CohortProgramsRoute,
   ContactRoute: ContactRoute,
   EnrollRoute: EnrollRoute,
   EventsRoute: EventsRoute,
@@ -670,13 +691,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
