@@ -102,11 +102,7 @@ export function Footer() {
 
         <div className="border-t border-ink-foreground/10 pt-8">
           <p className="font-display text-xs font-bold uppercase tracking-[0.16em] text-gold">
-            Contact Labels
-          </p>
-          <p className="mt-3 text-xs text-ink-muted">
-            These addresses are placeholders until the organization domain and forwarding are
-            active. Please use the contact form for a guaranteed response.
+            Contact
           </p>
           <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
             {CONTACT_LABELS.map((label) => (
@@ -116,6 +112,7 @@ export function Footer() {
             ))}
           </ul>
         </div>
+
 
         <div className="mt-10 flex flex-col gap-3 border-t border-ink-foreground/10 pt-6 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
