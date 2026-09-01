@@ -41,12 +41,21 @@ Visitors who submit a form but never enroll get their own track: an interest con
 
 ## Payments
 
-Separate from this build but designed to fit: checkout for the $25 seat reservation, founding-family tuition, the two-payment plan, supported tuition, and event fees. Once a payment succeeds, the family's onboarding clock starts automatically. Stripe is the practical choice — Paddle is technically recommended for this product category but requires a manual review after go-live with no guaranteed approval.
+Stripe, using Lovable's built-in payments (no separate Stripe account setup needed). Checkout covers the $25 seat reservation, founding-family tuition, the two-payment plan, supported tuition, and event fees. Once a payment succeeds, the family's onboarding clock starts automatically.
+
+## Confirmed decisions
+
+- **Payments**: Stripe.
+- **Sign-in**: email + password, plus Google. No magic link — it requires an email round-trip on every login and is a poor fit for shared family devices.
+- **Welcome video**: placeholder player on the dashboard until your recording is ready. Until then, the orientation step tells families to schedule a live orientation rather than watch a recording.
+- **Handbook**: placeholder document with your real signing terms and deadline logic live from day one, so nothing has to be rebuilt when the final handbook is ready — you just upload the new version.
+- **Orientation materials**: your attached documents did not come through. Re-attach and I'll build them in as downloadable orientation resources plus an in-orientation completion checklist parents work through and mark done.
 
 ## Technical notes
 
 - Parent accounts use Lovable Cloud auth (email/password + Google). A `profiles` row is created on signup; roles live in the existing `user_roles` table with a new `staff` role alongside `admin`.
-- New tables: `profiles`, `families`, `students`, `emergency_contacts`, `onboarding_tasks`, `orientation_sessions`, `handbook_versions`, `handbook_signatures`, `message_threads`, `messages`, `board_posts`, `board_replies`, `post_reports`. All with row-level security scoping parents to their own records and gating board content on `approved` status.
+- New tables: `profiles`, `families`, `students`, `emergency_contacts`, `onboarding_tasks`, `orientation_sessions`, `orientation_resources`, `handbook_versions`, `handbook_signatures`, `message_threads`, `messages`, `board_posts`, `board_replies`, `post_reports`. All with row-level security scoping parents to their own records and gating board content on `approved` status.
+- Orientation documents are stored in Cloud storage so you can swap the handbook and worksheets without a code change.
 - Existing lead tables stay as-is; a new account is linked to its originating lead by email so history carries over.
 - Parent routes live under the protected `_authenticated` area; admin routes are gated on the `admin`/`staff` role.
 - Transactional emails (welcome, task reminders, handbook due, orientation confirmations) send from your verified domain. SMS opt-in and phone number are captured now; actual texting needs a provider connected later.
@@ -55,15 +64,10 @@ Separate from this build but designed to fit: checkout for the $25 seat reservat
 
 1. Accounts, profiles, roles, and the protected Parent Arena shell
 2. Dashboard + onboarding task engine (contact info, emergency contacts, student info)
-3. Orientation (recorded + live date requests) and handbook signing with deadline logic
-4. Messages (parent ↔ point of contact) and the founder inbox
-5. Community board with the founder moderation queue
-6. Automated emails and the non-enroller nurture track
-7. Payments and checkout
+3. Orientation (live scheduling now, recorded video placeholder) with downloadable materials and completion checklist
+4. Handbook signing with the 14-day / 3rd-day deadline logic
+5. Messages (parent ↔ point of contact) and the founder inbox
+6. Community board with the founder moderation queue
+7. Automated emails and the non-enroller nurture track
+8. Stripe checkout
 
-## Decisions I still need
-
-- **Payment provider**: Stripe (recommended) or Paddle?
-- **Sign-in**: email + password with Google, or magic link only?
-- **Orientation video**: do you have the welcome and orientation recordings, or should I build with placeholders you swap in later?
-- **Handbook**: do you have the document, or should I use a placeholder with your signing terms?
