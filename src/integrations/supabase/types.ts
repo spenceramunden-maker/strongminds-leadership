@@ -1241,6 +1241,45 @@ export type Database = {
         }
         Relationships: []
       }
+      videos: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          description: string | null
+          external_url: string | null
+          id: string
+          is_active: boolean
+          kind: string
+          slot: string
+          storage_path: string | null
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          external_url?: string | null
+          id?: string
+          is_active?: boolean
+          kind: string
+          slot: string
+          storage_path?: string | null
+          title: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          external_url?: string | null
+          id?: string
+          is_active?: boolean
+          kind?: string
+          slot?: string
+          storage_path?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
       workshop_registrations: {
         Row: {
           consent: boolean
