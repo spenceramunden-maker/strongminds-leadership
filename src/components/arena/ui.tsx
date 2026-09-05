@@ -88,3 +88,45 @@ export function Placeholder({ children }: { children: ReactNode }) {
     </div>
   );
 }
+
+/** Renders a link for http(s) URLs, or a button that mints a signed URL for `storage:` paths. */
+export function DocumentLink({
+  url,
+  children,
+  className,
+}: {
+  url: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  const [busy, setBusy] = useState(false);
+
+  if (!url.startsWith("storage:")) {
+    return (
+      <a href={url} target="_blank" rel="noreferrer" className={className}>
+        {children}
+      </a>
+    );
+  }
+
+  const path = url.slice("storage:".length);
+
+  async function open() {
+    setBusy(true);
+    const { data, error } = await supabase.storage
+      .from("family-documents")
+      .createSignedUrl(path, 3600);
+    setBusy(false);
+    if (error || !data?.signedUrl) {
+      toast.error("We could not open that document. Please try again in a moment.");
+      return;
+    }
+    window.open(data.signedUrl, "_blank", "noopener");
+  }
+
+  return (
+    <button type="button" onClick={() => void open()} disabled={busy} className={className}>
+      {busy ? "Opening…" : children}
+    </button>
+  );
+}
