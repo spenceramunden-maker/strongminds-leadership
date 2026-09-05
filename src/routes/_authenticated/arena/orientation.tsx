@@ -13,6 +13,8 @@ import {
   DocumentLink,
   inputClass,
 } from "@/components/arena/ui";
+import { WelcomeVideo } from "@/components/arena/WelcomeVideo";
+import { WELCOME_VIDEO_SLOT } from "@/lib/videos";
 
 export const Route = createFileRoute("/_authenticated/arena/orientation")({
   component: OrientationPage,
@@ -130,10 +132,15 @@ function OrientationPage() {
   return (
     <div className="space-y-6">
       <Panel title="Welcome video">
-        <div className="flex aspect-video w-full items-center justify-center rounded-md border border-dashed border-border bg-muted/40 px-6 text-center text-sm text-muted-foreground">
-          Our founder's welcome video is in final production. Until it is posted, please schedule a
-          live orientation below — we will walk you through everything in person.
-        </div>
+        <WelcomeVideo
+          slot={WELCOME_VIDEO_SLOT}
+          placeholder={
+            <div className="flex aspect-video w-full items-center justify-center rounded-md border border-dashed border-border bg-muted/40 px-6 text-center text-sm text-muted-foreground">
+              Our founder's welcome video is in final production. Until it is posted, please
+              schedule a live orientation below — we will walk you through everything in person.
+            </div>
+          }
+        />
       </Panel>
 
       <Panel
