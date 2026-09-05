@@ -47,6 +47,7 @@ import { Route as AuthenticatedArenaRouteRouteImport } from './routes/_authentic
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin/index'
 import { Route as AuthenticatedAdminInboxRouteImport } from './routes/_authenticated/admin/inbox'
 import { Route as AuthenticatedAdminModerationRouteImport } from './routes/_authenticated/admin/moderation'
+import { Route as AuthenticatedAdminProgramRouteImport } from './routes/_authenticated/admin/program'
 import { Route as AuthenticatedArenaIndexRouteImport } from './routes/_authenticated/arena/index'
 import { Route as AuthenticatedArenaCommunityRouteImport } from './routes/_authenticated/arena/community'
 import { Route as AuthenticatedArenaFamilyRouteImport } from './routes/_authenticated/arena/family'
@@ -245,6 +246,12 @@ const AuthenticatedAdminModerationRoute =
     path: '/moderation',
     getParentRoute: () => AuthenticatedAdminRouteRoute,
   } as any)
+const AuthenticatedAdminProgramRoute =
+  AuthenticatedAdminProgramRouteImport.update({
+    id: '/program',
+    path: '/program',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 const AuthenticatedArenaIndexRoute = AuthenticatedArenaIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -324,6 +331,7 @@ export interface FileRoutesByFullPath {
   '/arena': typeof AuthenticatedArenaRouteRouteWithChildren
   '/admin/inbox': typeof AuthenticatedAdminInboxRoute
   '/admin/moderation': typeof AuthenticatedAdminModerationRoute
+  '/admin/program': typeof AuthenticatedAdminProgramRoute
   '/arena/community': typeof AuthenticatedArenaCommunityRoute
   '/arena/family': typeof AuthenticatedArenaFamilyRoute
   '/arena/handbook': typeof AuthenticatedArenaHandbookRoute
@@ -368,6 +376,7 @@ export interface FileRoutesByTo {
   '/youth-academy': typeof YouthAcademyRoute
   '/admin/inbox': typeof AuthenticatedAdminInboxRoute
   '/admin/moderation': typeof AuthenticatedAdminModerationRoute
+  '/admin/program': typeof AuthenticatedAdminProgramRoute
   '/arena/community': typeof AuthenticatedArenaCommunityRoute
   '/arena/family': typeof AuthenticatedArenaFamilyRoute
   '/arena/handbook': typeof AuthenticatedArenaHandbookRoute
@@ -416,6 +425,7 @@ export interface FileRoutesById {
   '/_authenticated/arena': typeof AuthenticatedArenaRouteRouteWithChildren
   '/_authenticated/admin/inbox': typeof AuthenticatedAdminInboxRoute
   '/_authenticated/admin/moderation': typeof AuthenticatedAdminModerationRoute
+  '/_authenticated/admin/program': typeof AuthenticatedAdminProgramRoute
   '/_authenticated/arena/community': typeof AuthenticatedArenaCommunityRoute
   '/_authenticated/arena/family': typeof AuthenticatedArenaFamilyRoute
   '/_authenticated/arena/handbook': typeof AuthenticatedArenaHandbookRoute
@@ -464,6 +474,7 @@ export interface FileRouteTypes {
     | '/arena'
     | '/admin/inbox'
     | '/admin/moderation'
+    | '/admin/program'
     | '/arena/community'
     | '/arena/family'
     | '/arena/handbook'
@@ -508,6 +519,7 @@ export interface FileRouteTypes {
     | '/youth-academy'
     | '/admin/inbox'
     | '/admin/moderation'
+    | '/admin/program'
     | '/arena/community'
     | '/arena/family'
     | '/arena/handbook'
@@ -555,6 +567,7 @@ export interface FileRouteTypes {
     | '/_authenticated/arena'
     | '/_authenticated/admin/inbox'
     | '/_authenticated/admin/moderation'
+    | '/_authenticated/admin/program'
     | '/_authenticated/arena/community'
     | '/_authenticated/arena/family'
     | '/_authenticated/arena/handbook'
@@ -869,6 +882,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminModerationRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
     }
+    '/_authenticated/admin/program': {
+      id: '/_authenticated/admin/program'
+      path: '/program'
+      fullPath: '/admin/program'
+      preLoaderRoute: typeof AuthenticatedAdminProgramRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
     '/_authenticated/arena/': {
       id: '/_authenticated/arena/'
       path: '/'
@@ -924,6 +944,7 @@ declare module '@tanstack/react-router' {
 interface AuthenticatedAdminRouteRouteChildren {
   AuthenticatedAdminInboxRoute: typeof AuthenticatedAdminInboxRoute
   AuthenticatedAdminModerationRoute: typeof AuthenticatedAdminModerationRoute
+  AuthenticatedAdminProgramRoute: typeof AuthenticatedAdminProgramRoute
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
 }
 
@@ -931,6 +952,7 @@ const AuthenticatedAdminRouteRouteChildren: AuthenticatedAdminRouteRouteChildren
   {
     AuthenticatedAdminInboxRoute: AuthenticatedAdminInboxRoute,
     AuthenticatedAdminModerationRoute: AuthenticatedAdminModerationRoute,
+    AuthenticatedAdminProgramRoute: AuthenticatedAdminProgramRoute,
     AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
   }
 
