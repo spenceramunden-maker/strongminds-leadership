@@ -88,6 +88,36 @@ function Dashboard() {
       </div>
 
       <div className="space-y-6">
+        <Panel title="Tuition payment">
+          {(() => {
+            const payDue = (data.family as { payment_due_at?: string | null }).payment_due_at;
+            const payLeft = daysUntil(payDue ?? null);
+            return (
+              <>
+                {payDue ? (
+                  <>
+                    <p className="text-2xl text-foreground">{formatDate(payDue)}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {payLeft !== null && payLeft >= 0
+                        ? `${payLeft} day${payLeft === 1 ? "" : "s"} remaining.`
+                        : "Payment is now due."}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    Your due date is set once your student's first program day is confirmed.
+                  </p>
+                )}
+                <p className="mt-3 text-xs text-muted-foreground">
+                  No payment is due at enrollment. Tuition is due within the first 7 days of the
+                  program — we will email you an invoice and a secure payment link before the due
+                  date. Questions? Message your Strong Minds contact below.
+                </p>
+              </>
+            );
+          })()}
+        </Panel>
+
         <Panel title="Handbook deadline">
           {due ? (
             <>
