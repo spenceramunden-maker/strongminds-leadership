@@ -10,8 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AlumniFellowshipRouteImport } from './routes/alumni-fellowship'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CohortProgramsRouteImport } from './routes/cohort-programs'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EnrollRouteImport } from './routes/enroll'
@@ -40,10 +42,27 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VirtualCampusRouteImport } from './routes/virtual-campus'
 import { Route as VirtualCampusLoginRouteImport } from './routes/virtual-campus-login'
 import { Route as YouthAcademyRouteImport } from './routes/youth-academy'
+import { Route as AuthenticatedAdminRouteRouteImport } from './routes/_authenticated/admin/route'
+import { Route as AuthenticatedArenaRouteRouteImport } from './routes/_authenticated/arena/route'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin/index'
+import { Route as AuthenticatedAdminInboxRouteImport } from './routes/_authenticated/admin/inbox'
+import { Route as AuthenticatedAdminModerationRouteImport } from './routes/_authenticated/admin/moderation'
+import { Route as AuthenticatedAdminProgramRouteImport } from './routes/_authenticated/admin/program'
+import { Route as AuthenticatedArenaIndexRouteImport } from './routes/_authenticated/arena/index'
+import { Route as AuthenticatedArenaCommunityRouteImport } from './routes/_authenticated/arena/community'
+import { Route as AuthenticatedArenaFamilyRouteImport } from './routes/_authenticated/arena/family'
+import { Route as AuthenticatedArenaHandbookRouteImport } from './routes/_authenticated/arena/handbook'
+import { Route as AuthenticatedArenaMessagesRouteImport } from './routes/_authenticated/arena/messages'
+import { Route as AuthenticatedArenaOrientationRouteImport } from './routes/_authenticated/arena/orientation'
+import { Route as AuthenticatedArenaStudentsRouteImport } from './routes/_authenticated/arena/students'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -54,6 +73,11 @@ const AboutRoute = AboutRouteImport.update({
 const AlumniFellowshipRoute = AlumniFellowshipRouteImport.update({
   id: '/alumni-fellowship',
   path: '/alumni-fellowship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CohortProgramsRoute = CohortProgramsRouteImport.update({
@@ -196,11 +220,85 @@ const YouthAcademyRoute = YouthAcademyRouteImport.update({
   path: '/youth-academy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminRouteRoute = AuthenticatedAdminRouteRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedArenaRouteRoute = AuthenticatedArenaRouteRouteImport.update({
+  id: '/arena',
+  path: '/arena',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminInboxRoute = AuthenticatedAdminInboxRouteImport.update({
+  id: '/inbox',
+  path: '/inbox',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminModerationRoute =
+  AuthenticatedAdminModerationRouteImport.update({
+    id: '/moderation',
+    path: '/moderation',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminProgramRoute =
+  AuthenticatedAdminProgramRouteImport.update({
+    id: '/program',
+    path: '/program',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedArenaIndexRoute = AuthenticatedArenaIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedArenaRouteRoute,
+} as any)
+const AuthenticatedArenaCommunityRoute =
+  AuthenticatedArenaCommunityRouteImport.update({
+    id: '/community',
+    path: '/community',
+    getParentRoute: () => AuthenticatedArenaRouteRoute,
+  } as any)
+const AuthenticatedArenaFamilyRoute =
+  AuthenticatedArenaFamilyRouteImport.update({
+    id: '/family',
+    path: '/family',
+    getParentRoute: () => AuthenticatedArenaRouteRoute,
+  } as any)
+const AuthenticatedArenaHandbookRoute =
+  AuthenticatedArenaHandbookRouteImport.update({
+    id: '/handbook',
+    path: '/handbook',
+    getParentRoute: () => AuthenticatedArenaRouteRoute,
+  } as any)
+const AuthenticatedArenaMessagesRoute =
+  AuthenticatedArenaMessagesRouteImport.update({
+    id: '/messages',
+    path: '/messages',
+    getParentRoute: () => AuthenticatedArenaRouteRoute,
+  } as any)
+const AuthenticatedArenaOrientationRoute =
+  AuthenticatedArenaOrientationRouteImport.update({
+    id: '/orientation',
+    path: '/orientation',
+    getParentRoute: () => AuthenticatedArenaRouteRoute,
+  } as any)
+const AuthenticatedArenaStudentsRoute =
+  AuthenticatedArenaStudentsRouteImport.update({
+    id: '/students',
+    path: '/students',
+    getParentRoute: () => AuthenticatedArenaRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/auth': typeof AuthRoute
   '/cohort-programs': typeof CohortProgramsRoute
   '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
@@ -229,11 +327,25 @@ export interface FileRoutesByFullPath {
   '/virtual-campus': typeof VirtualCampusRoute
   '/virtual-campus-login': typeof VirtualCampusLoginRoute
   '/youth-academy': typeof YouthAcademyRoute
+  '/admin': typeof AuthenticatedAdminRouteRouteWithChildren
+  '/arena': typeof AuthenticatedArenaRouteRouteWithChildren
+  '/admin/inbox': typeof AuthenticatedAdminInboxRoute
+  '/admin/moderation': typeof AuthenticatedAdminModerationRoute
+  '/admin/program': typeof AuthenticatedAdminProgramRoute
+  '/arena/community': typeof AuthenticatedArenaCommunityRoute
+  '/arena/family': typeof AuthenticatedArenaFamilyRoute
+  '/arena/handbook': typeof AuthenticatedArenaHandbookRoute
+  '/arena/messages': typeof AuthenticatedArenaMessagesRoute
+  '/arena/orientation': typeof AuthenticatedArenaOrientationRoute
+  '/arena/students': typeof AuthenticatedArenaStudentsRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
+  '/arena/': typeof AuthenticatedArenaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/auth': typeof AuthRoute
   '/cohort-programs': typeof CohortProgramsRoute
   '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
@@ -262,12 +374,25 @@ export interface FileRoutesByTo {
   '/virtual-campus': typeof VirtualCampusRoute
   '/virtual-campus-login': typeof VirtualCampusLoginRoute
   '/youth-academy': typeof YouthAcademyRoute
+  '/admin/inbox': typeof AuthenticatedAdminInboxRoute
+  '/admin/moderation': typeof AuthenticatedAdminModerationRoute
+  '/admin/program': typeof AuthenticatedAdminProgramRoute
+  '/arena/community': typeof AuthenticatedArenaCommunityRoute
+  '/arena/family': typeof AuthenticatedArenaFamilyRoute
+  '/arena/handbook': typeof AuthenticatedArenaHandbookRoute
+  '/arena/messages': typeof AuthenticatedArenaMessagesRoute
+  '/arena/orientation': typeof AuthenticatedArenaOrientationRoute
+  '/arena/students': typeof AuthenticatedArenaStudentsRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
+  '/arena': typeof AuthenticatedArenaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/alumni-fellowship': typeof AlumniFellowshipRoute
+  '/auth': typeof AuthRoute
   '/cohort-programs': typeof CohortProgramsRoute
   '/contact': typeof ContactRoute
   '/enroll': typeof EnrollRoute
@@ -296,6 +421,19 @@ export interface FileRoutesById {
   '/virtual-campus': typeof VirtualCampusRoute
   '/virtual-campus-login': typeof VirtualCampusLoginRoute
   '/youth-academy': typeof YouthAcademyRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteRouteWithChildren
+  '/_authenticated/arena': typeof AuthenticatedArenaRouteRouteWithChildren
+  '/_authenticated/admin/inbox': typeof AuthenticatedAdminInboxRoute
+  '/_authenticated/admin/moderation': typeof AuthenticatedAdminModerationRoute
+  '/_authenticated/admin/program': typeof AuthenticatedAdminProgramRoute
+  '/_authenticated/arena/community': typeof AuthenticatedArenaCommunityRoute
+  '/_authenticated/arena/family': typeof AuthenticatedArenaFamilyRoute
+  '/_authenticated/arena/handbook': typeof AuthenticatedArenaHandbookRoute
+  '/_authenticated/arena/messages': typeof AuthenticatedArenaMessagesRoute
+  '/_authenticated/arena/orientation': typeof AuthenticatedArenaOrientationRoute
+  '/_authenticated/arena/students': typeof AuthenticatedArenaStudentsRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
+  '/_authenticated/arena/': typeof AuthenticatedArenaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -303,6 +441,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/alumni-fellowship'
+    | '/auth'
     | '/cohort-programs'
     | '/contact'
     | '/enroll'
@@ -331,11 +470,25 @@ export interface FileRouteTypes {
     | '/virtual-campus'
     | '/virtual-campus-login'
     | '/youth-academy'
+    | '/admin'
+    | '/arena'
+    | '/admin/inbox'
+    | '/admin/moderation'
+    | '/admin/program'
+    | '/arena/community'
+    | '/arena/family'
+    | '/arena/handbook'
+    | '/arena/messages'
+    | '/arena/orientation'
+    | '/arena/students'
+    | '/admin/'
+    | '/arena/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/alumni-fellowship'
+    | '/auth'
     | '/cohort-programs'
     | '/contact'
     | '/enroll'
@@ -364,11 +517,24 @@ export interface FileRouteTypes {
     | '/virtual-campus'
     | '/virtual-campus-login'
     | '/youth-academy'
+    | '/admin/inbox'
+    | '/admin/moderation'
+    | '/admin/program'
+    | '/arena/community'
+    | '/arena/family'
+    | '/arena/handbook'
+    | '/arena/messages'
+    | '/arena/orientation'
+    | '/arena/students'
+    | '/admin'
+    | '/arena'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
     | '/alumni-fellowship'
+    | '/auth'
     | '/cohort-programs'
     | '/contact'
     | '/enroll'
@@ -397,12 +563,27 @@ export interface FileRouteTypes {
     | '/virtual-campus'
     | '/virtual-campus-login'
     | '/youth-academy'
+    | '/_authenticated/admin'
+    | '/_authenticated/arena'
+    | '/_authenticated/admin/inbox'
+    | '/_authenticated/admin/moderation'
+    | '/_authenticated/admin/program'
+    | '/_authenticated/arena/community'
+    | '/_authenticated/arena/family'
+    | '/_authenticated/arena/handbook'
+    | '/_authenticated/arena/messages'
+    | '/_authenticated/arena/orientation'
+    | '/_authenticated/arena/students'
+    | '/_authenticated/admin/'
+    | '/_authenticated/arena/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AlumniFellowshipRoute: typeof AlumniFellowshipRoute
+  AuthRoute: typeof AuthRoute
   CohortProgramsRoute: typeof CohortProgramsRoute
   ContactRoute: typeof ContactRoute
   EnrollRoute: typeof EnrollRoute
@@ -442,6 +623,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -454,6 +642,13 @@ declare module '@tanstack/react-router' {
       path: '/alumni-fellowship'
       fullPath: '/alumni-fellowship'
       preLoaderRoute: typeof AlumniFellowshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cohort-programs': {
@@ -652,13 +847,165 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof YouthAcademyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/arena': {
+      id: '/_authenticated/arena'
+      path: '/arena'
+      fullPath: '/arena'
+      preLoaderRoute: typeof AuthenticatedArenaRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/inbox': {
+      id: '/_authenticated/admin/inbox'
+      path: '/inbox'
+      fullPath: '/admin/inbox'
+      preLoaderRoute: typeof AuthenticatedAdminInboxRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/moderation': {
+      id: '/_authenticated/admin/moderation'
+      path: '/moderation'
+      fullPath: '/admin/moderation'
+      preLoaderRoute: typeof AuthenticatedAdminModerationRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/program': {
+      id: '/_authenticated/admin/program'
+      path: '/program'
+      fullPath: '/admin/program'
+      preLoaderRoute: typeof AuthenticatedAdminProgramRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/arena/': {
+      id: '/_authenticated/arena/'
+      path: '/'
+      fullPath: '/arena/'
+      preLoaderRoute: typeof AuthenticatedArenaIndexRouteImport
+      parentRoute: typeof AuthenticatedArenaRouteRoute
+    }
+    '/_authenticated/arena/community': {
+      id: '/_authenticated/arena/community'
+      path: '/community'
+      fullPath: '/arena/community'
+      preLoaderRoute: typeof AuthenticatedArenaCommunityRouteImport
+      parentRoute: typeof AuthenticatedArenaRouteRoute
+    }
+    '/_authenticated/arena/family': {
+      id: '/_authenticated/arena/family'
+      path: '/family'
+      fullPath: '/arena/family'
+      preLoaderRoute: typeof AuthenticatedArenaFamilyRouteImport
+      parentRoute: typeof AuthenticatedArenaRouteRoute
+    }
+    '/_authenticated/arena/handbook': {
+      id: '/_authenticated/arena/handbook'
+      path: '/handbook'
+      fullPath: '/arena/handbook'
+      preLoaderRoute: typeof AuthenticatedArenaHandbookRouteImport
+      parentRoute: typeof AuthenticatedArenaRouteRoute
+    }
+    '/_authenticated/arena/messages': {
+      id: '/_authenticated/arena/messages'
+      path: '/messages'
+      fullPath: '/arena/messages'
+      preLoaderRoute: typeof AuthenticatedArenaMessagesRouteImport
+      parentRoute: typeof AuthenticatedArenaRouteRoute
+    }
+    '/_authenticated/arena/orientation': {
+      id: '/_authenticated/arena/orientation'
+      path: '/orientation'
+      fullPath: '/arena/orientation'
+      preLoaderRoute: typeof AuthenticatedArenaOrientationRouteImport
+      parentRoute: typeof AuthenticatedArenaRouteRoute
+    }
+    '/_authenticated/arena/students': {
+      id: '/_authenticated/arena/students'
+      path: '/students'
+      fullPath: '/arena/students'
+      preLoaderRoute: typeof AuthenticatedArenaStudentsRouteImport
+      parentRoute: typeof AuthenticatedArenaRouteRoute
+    }
   }
 }
 
+interface AuthenticatedAdminRouteRouteChildren {
+  AuthenticatedAdminInboxRoute: typeof AuthenticatedAdminInboxRoute
+  AuthenticatedAdminModerationRoute: typeof AuthenticatedAdminModerationRoute
+  AuthenticatedAdminProgramRoute: typeof AuthenticatedAdminProgramRoute
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+}
+
+const AuthenticatedAdminRouteRouteChildren: AuthenticatedAdminRouteRouteChildren =
+  {
+    AuthenticatedAdminInboxRoute: AuthenticatedAdminInboxRoute,
+    AuthenticatedAdminModerationRoute: AuthenticatedAdminModerationRoute,
+    AuthenticatedAdminProgramRoute: AuthenticatedAdminProgramRoute,
+    AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+  }
+
+const AuthenticatedAdminRouteRouteWithChildren =
+  AuthenticatedAdminRouteRoute._addFileChildren(
+    AuthenticatedAdminRouteRouteChildren,
+  )
+
+interface AuthenticatedArenaRouteRouteChildren {
+  AuthenticatedArenaCommunityRoute: typeof AuthenticatedArenaCommunityRoute
+  AuthenticatedArenaFamilyRoute: typeof AuthenticatedArenaFamilyRoute
+  AuthenticatedArenaHandbookRoute: typeof AuthenticatedArenaHandbookRoute
+  AuthenticatedArenaMessagesRoute: typeof AuthenticatedArenaMessagesRoute
+  AuthenticatedArenaOrientationRoute: typeof AuthenticatedArenaOrientationRoute
+  AuthenticatedArenaStudentsRoute: typeof AuthenticatedArenaStudentsRoute
+  AuthenticatedArenaIndexRoute: typeof AuthenticatedArenaIndexRoute
+}
+
+const AuthenticatedArenaRouteRouteChildren: AuthenticatedArenaRouteRouteChildren =
+  {
+    AuthenticatedArenaCommunityRoute: AuthenticatedArenaCommunityRoute,
+    AuthenticatedArenaFamilyRoute: AuthenticatedArenaFamilyRoute,
+    AuthenticatedArenaHandbookRoute: AuthenticatedArenaHandbookRoute,
+    AuthenticatedArenaMessagesRoute: AuthenticatedArenaMessagesRoute,
+    AuthenticatedArenaOrientationRoute: AuthenticatedArenaOrientationRoute,
+    AuthenticatedArenaStudentsRoute: AuthenticatedArenaStudentsRoute,
+    AuthenticatedArenaIndexRoute: AuthenticatedArenaIndexRoute,
+  }
+
+const AuthenticatedArenaRouteRouteWithChildren =
+  AuthenticatedArenaRouteRoute._addFileChildren(
+    AuthenticatedArenaRouteRouteChildren,
+  )
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRouteRoute: typeof AuthenticatedAdminRouteRouteWithChildren
+  AuthenticatedArenaRouteRoute: typeof AuthenticatedArenaRouteRouteWithChildren
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRouteRoute: AuthenticatedAdminRouteRouteWithChildren,
+  AuthenticatedArenaRouteRoute: AuthenticatedArenaRouteRouteWithChildren,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AlumniFellowshipRoute: AlumniFellowshipRoute,
+  AuthRoute: AuthRoute,
   CohortProgramsRoute: CohortProgramsRoute,
   ContactRoute: ContactRoute,
   EnrollRoute: EnrollRoute,
