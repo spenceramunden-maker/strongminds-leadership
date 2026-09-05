@@ -75,6 +75,9 @@ async function loadArena() {
         ...(t.key === "handbook" && family!.handbook_due_at
           ? { due_at: family!.handbook_due_at }
           : {}),
+        ...(t.key === "payment" && (family as { payment_due_at?: string | null }).payment_due_at
+          ? { due_at: (family as { payment_due_at?: string | null }).payment_due_at }
+          : {}),
       })),
     );
   }
