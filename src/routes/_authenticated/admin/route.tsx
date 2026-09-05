@@ -10,6 +10,7 @@ const LINKS = [
   { to: "/admin/inbox", label: "Inbox" },
   { to: "/admin/moderation", label: "Moderation" },
   { to: "/admin/program", label: "Orientation & handbook" },
+  { to: "/admin/videos", label: "Videos" },
 ] as const;
 
 function AdminLayout() {

@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useArena } from "@/hooks/useArena";
 import { TASK_BY_KEY, formatDate, daysUntil } from "@/lib/arena";
 import { Panel, StatusPill, Placeholder } from "@/components/arena/ui";
+import { WelcomeVideo } from "@/components/arena/WelcomeVideo";
+import { WELCOME_VIDEO_SLOT } from "@/lib/videos";
 
 export const Route = createFileRoute("/_authenticated/arena/")({
   component: Dashboard,
@@ -75,10 +77,15 @@ function Dashboard() {
           title="Welcome video"
           description="A short introduction from our founder before your first program day."
         >
-          <div className="flex aspect-video w-full items-center justify-center rounded-md border border-dashed border-border bg-muted/40 text-center text-sm text-muted-foreground">
-            The welcome video is being finished right now. It will appear here as soon as it is
-            ready — we will email you when it does.
-          </div>
+          <WelcomeVideo
+            slot={WELCOME_VIDEO_SLOT}
+            placeholder={
+              <div className="flex aspect-video w-full items-center justify-center rounded-md border border-dashed border-border bg-muted/40 text-center text-sm text-muted-foreground">
+                The welcome video is being finished right now. It will appear here as soon as it is
+                ready — we will email you when it does.
+              </div>
+            }
+          />
           <div className="mt-4">
             <Link to="/arena/orientation" className="btn btn-gold">
               Schedule your orientation

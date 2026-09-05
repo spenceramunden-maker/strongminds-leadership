@@ -14,4 +14,4 @@
 
 ## Waiting on the user
 
-- [ ] Final welcome video (placeholder in place on dashboard + orientation page)
+- [x] Welcome video manager in founder tools: upload MP4 (up to 500 MB) or paste a YouTube/Vimeo/Google Drive link; the live video plays on the family dashboard + orientation page (placeholder shows until one is published)
