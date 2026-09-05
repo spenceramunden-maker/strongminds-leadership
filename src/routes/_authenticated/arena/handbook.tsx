@@ -5,7 +5,14 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useArena, useRefreshArena, setTaskStatus } from "@/hooks/useArena";
 import { formatDate, formatDateTime, daysUntil } from "@/lib/arena";
-import { Panel, Field, inputClass, EmptyNote, Placeholder } from "@/components/arena/ui";
+import {
+  Panel,
+  Field,
+  inputClass,
+  EmptyNote,
+  Placeholder,
+  DocumentLink,
+} from "@/components/arena/ui";
 
 export const Route = createFileRoute("/_authenticated/arena/handbook")({
   component: HandbookPage,
@@ -113,14 +120,12 @@ function HandbookPage() {
               </div>
             ) : null}
             {handbook.data.external_url ? (
-              <a
-                href={handbook.data.external_url}
-                target="_blank"
-                rel="noreferrer"
+              <DocumentLink
+                url={handbook.data.external_url}
                 className="btn btn-outline-ink mb-4 inline-flex"
               >
                 Download the handbook
-              </a>
+              </DocumentLink>
             ) : null}
             {handbook.data.body ? (
               <div className="max-h-96 overflow-y-auto whitespace-pre-line rounded-md border border-border bg-background p-4 text-sm leading-relaxed text-muted-foreground">

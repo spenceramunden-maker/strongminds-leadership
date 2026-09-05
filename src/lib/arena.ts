@@ -52,6 +52,14 @@ export const TASK_DEFS: TaskDef[] = [
     to: "/arena/handbook",
     sortOrder: 6,
   },
+  {
+    key: "payment",
+    label: "Tuition payment",
+    description:
+      "No payment is due at enrollment. Tuition is due within 7 days of your student's first program day — we will send an invoice and secure payment link before then.",
+    to: "/arena",
+    sortOrder: 7,
+  },
 ];
 
 export const TASK_BY_KEY = Object.fromEntries(TASK_DEFS.map((t) => [t.key, t]));

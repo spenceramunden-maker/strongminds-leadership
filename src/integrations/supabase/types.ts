@@ -281,6 +281,7 @@ export type Database = {
           id: string
           mailing_address: string | null
           owner_id: string
+          payment_due_at: string | null
           poc_email: string
           poc_name: string
           postal_code: string | null
@@ -300,6 +301,7 @@ export type Database = {
           id?: string
           mailing_address?: string | null
           owner_id: string
+          payment_due_at?: string | null
           poc_email?: string
           poc_name?: string
           postal_code?: string | null
@@ -319,6 +321,7 @@ export type Database = {
           id?: string
           mailing_address?: string | null
           owner_id?: string
+          payment_due_at?: string | null
           poc_email?: string
           poc_name?: string
           postal_code?: string | null

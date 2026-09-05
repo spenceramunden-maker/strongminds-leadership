@@ -5,7 +5,14 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useArena, useRefreshArena, setTaskStatus } from "@/hooks/useArena";
 import { formatDateTime } from "@/lib/arena";
-import { Panel, EmptyNote, Placeholder, StatusPill, inputClass } from "@/components/arena/ui";
+import {
+  Panel,
+  EmptyNote,
+  Placeholder,
+  StatusPill,
+  DocumentLink,
+  inputClass,
+} from "@/components/arena/ui";
 
 export const Route = createFileRoute("/_authenticated/arena/orientation")({
   component: OrientationPage,
@@ -227,14 +234,12 @@ function OrientationPage() {
                       <p className="mt-1 text-sm text-muted-foreground">{r.description}</p>
                     ) : null}
                     {r.external_url ? (
-                      <a
-                        href={r.external_url}
-                        target="_blank"
-                        rel="noreferrer"
+                      <DocumentLink
+                        url={r.external_url}
                         className="mt-1 inline-block text-sm underline underline-offset-4"
                       >
                         Open document
-                      </a>
+                      </DocumentLink>
                     ) : null}
                   </div>
                   <button
