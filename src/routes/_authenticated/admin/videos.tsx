@@ -41,7 +41,7 @@ function AdminVideos() {
   async function activateOnly(newId: string) {
     await supabase.from("videos").update({ is_active: false }).eq("slot", WELCOME_VIDEO_SLOT);
     await supabase.from("videos").update({ is_active: true }).eq("id", newId);
-hment  }
+  }
 
   async function makeLive(id: string) {
     await supabase.from("videos").update({ is_active: false }).eq("slot", WELCOME_VIDEO_SLOT);
